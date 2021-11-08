@@ -4,5 +4,6 @@
     <MainIntro />
     <TwoFeatures />
     <Testimonials />
+    <Contact />
   </div>
 </template>
