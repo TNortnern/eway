@@ -196,7 +196,7 @@
           >Sign in</a> -->
           <a
             href="#"
-            class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-15 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500) duration-150"
+            class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-10 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500) duration-150"
           >Book now</a>
         </div>
       </div>
