@@ -14,7 +14,7 @@ import './styles/main.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
-import { registerScrollSpy, Easing } from 'vue3-scroll-spy'
+// import { registerScrollSpy, Easing } from 'vue3-scroll-spy'
 
 
 const routes = setupLayouts(generatedRoutes)
@@ -35,9 +35,9 @@ export const createApp = ViteSSG(
     app.use(VueSmoothScroll)
     app.mixin(globalMixin)
     // or custom global options
-    registerScrollSpy(app, {
-      easing: Easing.Cubic.In
-    })
+    // registerScrollSpy(app, {
+    //   easing: Easing.Cubic.In
+    // })
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
   },
