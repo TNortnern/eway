@@ -18,6 +18,7 @@ declare module 'vue' {
     README: typeof import('./components/README.md')['default']
     Testimonials: typeof import('./components/Testimonials.vue')['default']
     TwoFeatures: typeof import('./components/TwoFeatures.vue')['default']
+    WhoWeAre: typeof import('./components/WhoWeAre.vue')['default']
   }
 }
 

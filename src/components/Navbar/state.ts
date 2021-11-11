@@ -13,7 +13,7 @@ interface navLink {
 export const navLinks : navLink[] = [
   {
     name: 'Who we are',
-    href: '#who',
+    href: '#who-we-are',
   },
   {
     name: 'Why choose micromobility?',

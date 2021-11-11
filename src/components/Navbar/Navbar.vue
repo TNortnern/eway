@@ -21,7 +21,7 @@
     <!-- This will only render once you've scrolled past the static navbar -->
     <div
       id="nav"
-      class="mx-auto  fixed top-0 text-gray-700 inset-x-0 bg-white duration-500 ease-in-out shadow-2xl py-4.5 z-30 w-full"
+      class="mx-auto  fixed top-0 text-gray-700 inset-x-0 bg-white duration-500 ease-in-out shadow-xl py-4.5 z-30 w-full"
       :class="toggleNavClass()"
       always-track
       active-class="text-yellow-400"
