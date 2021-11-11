@@ -1,12 +1,13 @@
 <template>
-  <nav v-scroll-spy  v-scroll-spy-active="{selector: 'div a', class: 'text-5xl'}" class="hidden lg:flex flex-row ml-auto space-x-12 items-center font-bold">
-    <li class="block list-none"  v-for="navLink in navLinks" :key="navLink.name">
+  <nav class="hidden lg:flex flex-row ml-auto space-x-12 items-center font-bold">
+    <div v-for="navLink in navLinks" :key="navLink.name">
       <a
+        v-smooth-scroll
         :href="navLink.href"
-        class="link-item hover:text-yellow-400 transition duration-150"
-        :class="[navLink.class]"
+        class=" scrollactive-item"
+        :class="[navLink.class, activeHash === navLink.href ? 'text-yellow-400' : 'hover:text-yellow-400 transition duration-150']"
       >{{ navLink.name }}</a>
-    </li>
+    </div>
   </nav>
 </template>
 
