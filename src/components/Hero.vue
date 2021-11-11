@@ -59,7 +59,7 @@
         >
           <img
             class="absolute inset-0 w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/p/AF1QipPzlZ1ePxhVU0NWADSP9VmOMi33mSn88KWfo7zp=w960-h960-n-o-v1"
+            src="https://i.imgur.com/yPHkk1Z.jpg"
             alt
           />
         </div>

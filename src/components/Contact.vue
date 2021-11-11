@@ -1,12 +1,12 @@
 
 <template>
   <!-- Section 1 -->
-  <section class="relative py-0 bg-white lg:py-20">
+  <section id="book-now" class="relative py-0 bg-white lg:py-20">
     <div class="flex flex-col items-center justify-between lg:px-10 mx-auto max-w-7xl xl:px-5 lg:flex-row">
       <div class="flex flex-col items-center w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row">
-        <div class="relative w-full max-w-md bg-cover lg:max-w-2xl lg:w-7/12">
+        <div class="relative w-full max-w-md bg-cover lg:max-w-lg lg:w-7/12">
           <div class="relative flex flex-col items-center justify-center w-full h-full lg:pr-10">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipMKutjUKSsg24lZNLE4UC7Lmxc5ADlfRxVS4fiY=w960-h960-n-o-v1">
+            <img src="https://i.imgur.com/W14HAtS.jpg">
           </div>
         </div>
 
