@@ -3,6 +3,7 @@ import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
+import VueSmoothScroll from 'vue3-smooth-scroll'
 
 // windicss layers
 import 'virtual:windi-base.css'
@@ -13,6 +14,8 @@ import './styles/main.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
+import { registerScrollSpy, Easing } from 'vue3-scroll-spy'
+
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -21,6 +24,20 @@ export const createApp = ViteSSG(
   App,
   { routes },
   (ctx) => {
+    const globalMixin = {
+      computed: {
+        activeHash() {
+          return this.$route.hash
+        }
+      }
+    }
+    const { app } = ctx
+    app.use(VueSmoothScroll)
+    app.mixin(globalMixin)
+    // or custom global options
+    registerScrollSpy(app, {
+      easing: Easing.Cubic.In
+    })
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
   },

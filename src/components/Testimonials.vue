@@ -1,6 +1,6 @@
 <template>
   <!-- Section 1 -->
-  <section class="flex items-center justify-center py-20 bg-white container mx-auto">
+  <section id="testimonials" class="flex items-center justify-center py-20 bg-white container mx-auto">
     <div class="px-16 bg-white">
       <div class="container flex flex-col items-start mx-auto lg:items-center">
         <p class="relative flex items-start justify-start w-full text-lg font-bold tracking-wider text-yellow-400 uppercase lg:justify-center lg:items-center">

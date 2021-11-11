@@ -1,6 +1,6 @@
 <template>
   <!-- Section 1 -->
-  <section class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24">
+  <section id="features" class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-extrabold text-gray-900">
         Features
