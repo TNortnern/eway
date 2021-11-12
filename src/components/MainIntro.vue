@@ -28,7 +28,7 @@
   </div> -->
 
   <!-- Section 1 -->
-  <section class="pt-8 pb-12 sm:pt-40 sm:pb-18 bg-white">
+  <section id="why-choose-micromobility" class="pt-8 pb-12 sm:pt-40 sm:pb-18 bg-white">
     <div class="items-center max-w-7xl px-12 mx-auto sm:px-10 md:px-5">
       <div class="flex flex-wrap items-center -mx-3">
         <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
@@ -54,9 +54,7 @@
   </section>
 </template>
 
-<script lang="ts">
-import { CheckIcon } from '@heroicons/vue/outline'
-
+<script setup lang="ts">
 const features = [
   {
     name: 'Enhance the public transit network',
@@ -91,15 +89,12 @@ const features = [
     description: 'Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.',
   },
 ]
-
+</script>
+<script lang="ts">
+import { CheckIcon } from '@heroicons/vue/outline'
 export default {
   components: {
     CheckIcon,
-  },
-  setup() {
-    return {
-      features,
-    }
   },
 }
 </script>

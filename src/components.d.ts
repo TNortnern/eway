@@ -4,16 +4,21 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CarbonWarning: typeof import('~icons/carbon/warning')['default']
+    Button: typeof import('./components/Button.vue')['default']
     Contact: typeof import('./components/Contact.vue')['default']
+    DesktopNavbar: typeof import('./components/Navbar/DesktopNavbar.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Hero: typeof import('./components/Hero.vue')['default']
+    Icon: typeof import('~icons/ic/on')['default']
     MainIntro: typeof import('./components/MainIntro.vue')['default']
-    Navbar: typeof import('./components/Navbar.vue')['default']
-    PhoneIcon: typeof import('~icons/ph/one-icon')['default']
+    MobileNavbar: typeof import('./components/Navbar/MobileNavbar.vue')['default']
+    MobileNavDrawer: typeof import('./components/Navbar/MobileNavDrawer.vue')['default']
+    Navbar: typeof import('./components/Navbar/Navbar.vue')['default']
+    Navbar2: typeof import('./components/Navbar2.vue')['default']
     README: typeof import('./components/README.md')['default']
     Testimonials: typeof import('./components/Testimonials.vue')['default']
     TwoFeatures: typeof import('./components/TwoFeatures.vue')['default']
+    WhoWeAre: typeof import('./components/WhoWeAre.vue')['default']
   }
 }
 

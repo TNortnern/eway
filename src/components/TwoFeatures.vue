@@ -1,11 +1,11 @@
 <template>
   <!-- Section 1 -->
-  <section class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24">
+  <section id="features" class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-extrabold text-gray-900">
         Features
       </h2>
-      <p class="mt-4 text-lg text-gray-500">
+      <p class="mt-4 text-center px-3 mb-2 md:(text-lg px-0) text-gray-500">
         Build, operate, maintain, manage, and market a modern bike share
         system through a network of publicly-accessible bicycles/ e-bikes/
       </p>
@@ -18,7 +18,7 @@
 
       <!-- Content -->
       <div class="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
-        <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+        <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:(text-2xl text-left) text-center">
           Boost Productivity
         </h2>
         <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
@@ -41,7 +41,7 @@
     <div class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
       <!-- Content -->
       <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
-        <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+        <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:(text-2xl text-left) text-center">
           Automated Tasks
         </h2>
         <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
