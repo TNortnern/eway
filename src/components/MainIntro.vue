@@ -105,9 +105,13 @@ export default {
     CheckIcon,
   },
   setup() {
+    const router = useRouter()
     const active = useActiveLink()
     const visibilityChanged = (v: any, entry: any) => {
-      if (v) active.setActiveLink(`#${entry.target?.id}`)
+      if (v) {
+        active.setActiveLink(`#${entry?.target?.id}`)
+        router?.push(`#${entry?.target?.id}`)
+      }
     }
     return {
       visibilityChanged,

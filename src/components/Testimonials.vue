@@ -93,7 +93,11 @@
 <script setup lang="ts">
 import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
+const router = useRouter()
 const visibilityChanged = (v: any, entry: any) => {
-  if (v) active.setActiveLink(`#${entry?.target?.id}`)
+  if (v) {
+    active.setActiveLink(`#${entry?.target?.id}`)
+    router?.push(`#${entry?.target?.id}`)
+  }
 }
 </script>
