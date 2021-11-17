@@ -1,6 +1,15 @@
 <template>
   <!-- Section 1 -->
-  <section id="testimonials" class="flex items-center justify-center py-20 bg-white container mx-auto">
+  <section
+    id="testimonials"
+    v-observe-visibility="{
+      callback: visibilityChanged,
+      intersection: {
+        threshold: 0.7,
+      },
+    }"
+    class="flex items-center justify-center py-20 bg-white container mx-auto"
+  >
     <div class="px-16 bg-white">
       <div class="container flex flex-col items-start mx-auto lg:items-center">
         <p class="relative flex items-start justify-start w-full text-lg font-bold tracking-wider text-yellow-400 uppercase lg:justify-center lg:items-center">
@@ -80,3 +89,11 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import useActiveLink from '~/composables/useActiveLink'
+const active = useActiveLink()
+const visibilityChanged = (v: any, entry: any) => {
+  if (v) active.setActiveLink(`#${entry?.target?.id}`)
+}
+</script>

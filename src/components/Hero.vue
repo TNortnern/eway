@@ -1,6 +1,15 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="bg-black mb-12 lg:mb-0 text-white">
+  <div
+    id="hero"
+    v-observe-visibility="{
+      callback: visibilityChanged,
+      intersection: {
+        threshold: 0.4,
+      },
+    }"
+    class="bg-black mb-12 lg:mb-0 text-white"
+  >
     <Navbar />
     <div class="relative mx-auto max-w-7xl">
       <main class="lg:relative">
@@ -11,21 +20,15 @@
             >
               <span class="block xl:inline">If there's a way</span>
               {{ ' ' }}
-              <span
-                class="block text-yellow-400"
-              >It's Eway</span>
+              <span class="block text-yellow-400">It's Eway</span>
             </h1>
             <p
               class="mt-3 max-w-md mx-auto text-lg text-gray-50 sm:text-xl md:mt-5 md:max-w-3xl"
             >
               We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you've never seen it before. Give us a call to rent your scooters.
             </p>
-            <div
-              class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0"
-            >
-              <p
-                class="text-base font-medium text-gray-50"
-              >
+            <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+              <p class="text-base font-medium text-gray-50">
                 Sign up to get notified when it’s ready.
               </p>
               <form action="#" method="POST" class="mt-3 sm:flex">
@@ -67,13 +70,13 @@
     </div>
   </div>
 </template>
-
 <script lang="ts">
 import {
   MenuIcon,
   XIcon,
 } from '@heroicons/vue/outline'
 import { ChevronDownIcon } from '@heroicons/vue/solid'
+import useActiveLink from '~/composables/useActiveLink'
 
 export default {
   components: {
@@ -81,6 +84,15 @@ export default {
     ChevronDownIcon,
     XIcon,
     MenuIcon,
+  },
+  setup() {
+    const active = useActiveLink()
+    const visibilityChanged = (v: any, entry: any) => {
+      if (v) active.setActiveLink('')
+    }
+    return {
+      visibilityChanged,
+    }
   },
 }
 </script>

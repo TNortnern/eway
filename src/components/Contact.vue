@@ -1,7 +1,16 @@
 
 <template>
   <!-- Section 1 -->
-  <section id="book-now" class="relative py-0 bg-white lg:py-20">
+  <section
+    id="book-now"
+    v-observe-visibility="{
+      callback: visibilityChanged,
+      intersection: {
+        threshold: 0.4,
+      },
+    }"
+    class="relative py-0 bg-white lg:py-20"
+  >
     <div class="flex flex-col items-center justify-between lg:px-10 mx-auto max-w-7xl xl:px-5 lg:flex-row">
       <div class="flex flex-col items-center w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row">
         <div class="relative w-full max-w-md bg-cover lg:max-w-lg lg:w-7/12">
@@ -47,5 +56,11 @@
 
 <script setup lang="ts">
 import { MailIcon, PhoneIcon } from '@heroicons/vue/outline'
+import useActiveLink from '~/composables/useActiveLink'
+const active = useActiveLink()
+const visibilityChanged = (v: any, entry: any) => {
+  console.log('entry', entry.target?.id)
+  if (v) active.setActiveLink('')
+}
 
 </script>

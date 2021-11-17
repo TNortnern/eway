@@ -1,16 +1,31 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div id="who-we-are" class="bg-white">
+  <div
+    id="who-we-are"
+    v-observe-visibility="{
+      callback: visibilityChanged,
+      intersection: {
+        threshold: 0.1,
+      },
+    }"
+    class="bg-white"
+  >
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900">Who we are</h2>
-        <p class="mt-4 text-lg text-gray-500">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
+        <h2 class="text-3xl font-extrabold text-gray-900">
+          Who we are
+        </h2>
+        <p class="mt-4 text-lg text-gray-500">
+          Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
+        </p>
       </div>
       <dl class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
         <div v-for="feature in features" :key="feature.name" class="relative">
           <dt>
             <CheckIcon class="absolute h-6 w-6 text-green-500" aria-hidden="true" />
-            <p class="ml-9 text-lg leading-6 font-medium text-gray-900">{{ feature.name }}</p>
+            <p class="ml-9 text-lg leading-6 font-medium text-gray-900">
+              {{ feature.name }}
+            </p>
           </dt>
           <dd class="mt-2 ml-9 text-base text-gray-500">
             {{ feature.description }}
@@ -20,9 +35,19 @@
     </div>
   </div>
 </template>
-
-<script>
+<script setup lang="ts">
 import { CheckIcon } from '@heroicons/vue/outline'
+import useActiveLink from '~/composables/useActiveLink'
+const router = useRouter()
+const active = useActiveLink()
+const visibilityChanged = (v: any, entry: any) => {
+  if (v) {
+    active.setActiveLink(`#${entry?.target?.id}`)
+    router?.push(`#${entry?.target?.id}`)
+  }
+}
+</script>
+<script lang="ts">
 
 const features = [
   {

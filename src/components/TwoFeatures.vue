@@ -1,6 +1,15 @@
 <template>
   <!-- Section 1 -->
-  <section id="features" class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24">
+  <section
+    id="features"
+    v-observe-visibility="{
+      callback: visibilityChanged,
+      intersection: {
+        threshold: 0.5,
+      },
+    }"
+    class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24"
+  >
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-extrabold text-gray-900">
         Features
@@ -68,3 +77,15 @@
     </div>
   </section>
 </template>
+<script setup lang="ts">
+
+import useActiveLink from '~/composables/useActiveLink'
+const active = useActiveLink()
+const router = useRouter()
+const visibilityChanged = (v: any, entry: any) => {
+  if (v) {
+    active.setActiveLink(`#${entry?.target?.id}`)
+    router?.push(`#${entry?.target?.id}`)
+  }
+}
+</script>
