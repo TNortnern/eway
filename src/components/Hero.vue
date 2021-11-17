@@ -89,7 +89,6 @@ export default {
     const active = useActiveLink()
     const router = useRouter()
     const visibilityChanged = (v: any, entry: any) => {
-      console.log('entry', entry.target?.id)
       if (v) {
         active.setActiveLink('')
         router?.push('')
