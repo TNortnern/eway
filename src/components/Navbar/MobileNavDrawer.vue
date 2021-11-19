@@ -15,8 +15,9 @@
         <div v-for="navLink in navLinks" :key="navLink.name">
           <a
             v-if="navLink.name !== 'About'"
+            v-smooth-scroll
             class="scrollactive-item"
-            :class="navLink.class"
+            :class="[navLink.class, active.isActiveLink(navLink.href) ? 'text-yellow-400' : 'hover:text-yellow-400 transition duration-150']"
             :href="navLink.href"
           >{{ navLink.name }}</a>
         </div>
@@ -26,22 +27,28 @@
 </template>
 
 <script lang="ts">
-import { useRoute } from 'vue-router'
 import { XIcon } from '@heroicons/vue/solid'
 import { mobileMenuOpen, navLinks, toggleMenu, openContactModal } from './state'
+import useActiveLink from '~/composables/useActiveLink'
 export default {
   components: {
-    XIcon
+    XIcon,
   },
   setup() {
     const $route = useRoute()
-    const activeHash = computed(() => $route.hash)
+    // const activeHash = computed(() => $route.hash)
+    const active = useActiveLink()
+    watch($route, () => {
+      toggleMenu(false)
+      // console.log('val', val)
+    })
     return {
       toggleMenu,
       mobileMenuOpen,
       navLinks,
       openContactModal,
-      activeHash,
+      active,
+      // activeHash,
     }
   },
 }
