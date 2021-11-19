@@ -46,7 +46,7 @@
               Why choose micromobility?
             </h2>
             <ul>
-              <li v-for="{ name } in features" :key="name" class="flex justify-center w-120 mx-auto xl:justify-start items-center py-2 space-x-4 xl:py-3">
+              <li v-for="{ name } in features" :key="name" class="flex justify-center w-full md:w-120 lg:w-auto mx-auto xl:justify-start items-center py-2 space-x-4 xl:py-3">
                 <img src="https://cdn.devdojo.com/images/february2021/checkmark.png" class="w-4 h-4">
                 <span class="font-medium font-bold text-gray-700 flex-1">{{ name }}</span>
               </li>
