@@ -8,7 +8,7 @@
         threshold: 0.2,
       },
     }"
-    class="py-16 bg-black overflow-hidden lg:py-18 mt-48"
+    class="py-16 bg-[#0d0d0d] overflow-hidden lg:py-18 mt-48"
   >
     <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
       <!-- <svg
