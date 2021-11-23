@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <WhoWeAre />
+    <!-- <WhoWeAre /> -->
     <MainIntro />
     <TwoFeatures />
     <Testimonials />

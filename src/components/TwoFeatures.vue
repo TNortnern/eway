@@ -1,110 +1,98 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <!-- Section 1 -->
   <section
     id="features"
     v-observe-visibility="{
       callback: visibilityChanged,
       intersection: {
-        threshold: 0.5,
+        threshold: 0.2,
       },
     }"
-    class="w-full bg-white pt-7 pb-7 md:pt-48 md:pb-24"
+    class="py-16 bg-black overflow-hidden lg:py-18 mt-48"
   >
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900">
-        Features
-      </h2>
-      <p class="mt-4 text-center px-3 mb-2 md:(text-lg px-0) text-gray-500">
-        Build, operate, maintain, manage, and market a modern bike share
-        system through a network of publicly-accessible bicycles/ e-bikes/
-      </p>
-    </div>
-    <div
-      class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-0"
-    >
-      <!-- Image -->
-      <div
-        class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
+    <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+      <!-- <svg
+        class="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
+        width="404"
+        height="784"
+        fill="none"
+        viewBox="0 0 404 784"
+        aria-hidden="true"
       >
-        <img
-          src="https://lh3.googleusercontent.com/p/AF1QipMDk0mVK-y8SBfGIwoTVKK9NFim-VbRnrKE-wsH=w960-h960-n-o-v1"
-          class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
-        />
+        <defs>
+          <pattern
+            id="b1e6e422-73f8-40a6-b5d9-c8586e37e0e7"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-yellow-400"
+              fill="currentColor"
+            />
+          </pattern>
+        </defs>
+        <rect width="404" height="784" fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)" />
+      </svg> -->
+
+      <div class="relative mb-12">
+        <SectionHeader class="text-center leading-8 tracking-tight text-white">
+          <!-- Features -->
+        </SectionHeader>
+        <!-- <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in, accusamus quisquam.
+        </p> -->
       </div>
 
-      <!-- Content -->
-      <div
-        class="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none mb-10 mt-4"
+      <!-- <svg
+        class="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
+        width="404"
+        height="784"
+        fill="none"
+        viewBox="0 0 404 784"
+        aria-hidden="true"
       >
-        <h2
-          class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:(text-2xl text-left) text-center"
-        >
-          Bolt 2
-        </h2>
-        <!-- <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
-         Build an atmosphere that creates productivity in your organization and your company culture.
-        </p>-->
-        <ul class="p-0 m-0 leading-6 border-0 border-gray-300 mt-4">
-          <li
-            v-for="feature in bolt2Features"
-            :key="feature"
-            class="box-border flex justify-center items-center md:block relative py-1 pl-0 text-left text-gray-500 border-solid"
+        <defs>
+          <pattern
+            id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
           >
-            <span
-              class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-            >
-              <span class="text-sm font-bold">✓</span>
-            </span>
-            <span class="inline-block w-50 md:w-auto">{{ feature }}</span>
-          </li>
-        </ul>
-      </div>
-      <!-- End  Content -->
-    </div>
-    <div
-      class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16"
-    >
-      <!-- Content -->
-      <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
-        <h2
-          class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:(text-2xl text-left) text-center"
-        >
-          Cruisers
-        </h2>
-        <!-- <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
-          Save time and money with our revolutionary services. We are the leaders in the industry.
-        </p>-->
-        <ul class="p-0 m-0 leading-6 border-0 border-gray-300 mt-4">
-          <li
-            v-for="feature in cruiserFeatures"
-            :key="feature"
-            class="box-border flex justify-center items-center md:block relative py-1 pl-0 text-left text-gray-500 border-solid"
-          >
-            <span
-              class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-            >
-              <span class="text-sm font-bold">✓</span>
-            </span>
-            <span class="inline-block w-50 md:w-auto">{{ feature }}</span>
-          </li>
-        </ul>
-      </div>
-      <!-- End  Content -->
-
-      <!-- Image -->
-      <div
-        class="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
-      >
-        <img
-          src="https://media.discordapp.net/attachments/703391736650530861/911303289872724058/65887810983__70C15A4E-6179-4F63-A236-34E16BA0C037.jpeg?width=520&height=559"
-          class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32"
-        />
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-yellow-400"
+              fill="currentColor"
+            />
+          </pattern>
+        </defs>
+        <rect width="404" height="784" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+      </svg> -->
+      <!-- Section 1 -->
+      <div class="bg-white shadow-2xl py-8 rounded-lg">
+        <SectionHeader class="text-center leading-8 tracking-tight mb-8">
+          Features
+        </SectionHeader>
+        <FeatureItem title="Bolt 2" :features="bolt2Features" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd11b391050754a7b1449_Bolt-TWO-SCOOTER.png" inverse />
+        <!-- Section 1 -->
+        <FeatureItem title="Cruisers" :features="cruiserFeatures" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd0c6d5bf0c6ad3edaf37_Ojo-ByBolt-angle-Red.png" inverse />
       </div>
     </div>
   </section>
 </template>
-<script setup lang="ts">
 
+<script lang="ts" setup>
 import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 const router = useRouter()

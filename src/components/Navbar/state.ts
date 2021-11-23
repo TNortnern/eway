@@ -19,10 +19,10 @@ watch(mobileMenuOpen, (val) => {
 })
 
 export const navLinks: navLink[] = [
-  {
-    name: 'Who we are',
-    href: '#who-we-are',
-  },
+  // {
+  //   name: 'Who we are',
+  //   href: '#who-we-are',
+  // },
   {
     name: 'Why choose micromobility?',
     href: '#why-choose-micromobility',

@@ -42,10 +42,10 @@
       <div class="flex flex-wrap items-center -mx-3">
         <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
           <div class="w-full xl:max-w-xl">
-            <h2 class="relative text-center xl:text-left mb-6 text-3xl font-semibold leading-tight tracking-tight xl:font-bold lg:text-6xl xl:text-7xl">
+            <SectionHeader class="relative text-center lg:text-left mb-6 font-semibold leading-tight tracking-tight xl:font-bold">
               Why choose micromobility?
-            </h2>
-            <ul>
+            </SectionHeader>
+            <ul class="w-full lg:w-4/5 xl:flex-1">
               <li v-for="{ name } in features" :key="name" class="flex justify-center w-full md:w-120 lg:w-auto mx-auto xl:justify-start items-center py-2 space-x-4 xl:py-3">
                 <img src="https://cdn.devdojo.com/images/february2021/checkmark.png" class="w-4 h-4">
                 <span class="font-medium font-bold text-gray-700 flex-1">{{ name }}</span>

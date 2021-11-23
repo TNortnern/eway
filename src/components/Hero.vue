@@ -29,7 +29,7 @@
             </p>
             <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
               <p class="text-base font-medium text-gray-50">
-                Sign up to get notified when it’s ready.
+                Subscribe to our newsletter
               </p>
               <form action="#" method="POST" class="mt-3 sm:flex">
                 <label for="email" class="sr-only">Email</label>
