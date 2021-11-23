@@ -11,7 +11,7 @@
     class="bg-black mb-12 lg:mb-0 text-white"
   >
     <Navbar />
-    <div class="relative mx-auto max-w-7xl">
+    <div class="relative mx-auto max-w-7xl border-t pt-6 border-yellow-400">
       <main class="lg:relative">
         <div class="w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
           <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
