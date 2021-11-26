@@ -1,14 +1,14 @@
 <template>
   <div>
     <transition name="fade">
-      <div v-if="mobileMenuOpen" class="fixed z-40 bg-black bg-opacity-25 inset-0"></div>
+      <div v-if="mobileMenuOpen" class="fixed z-40 bg-black bg-opacity-70 inset-0"></div>
     </transition>
     <transition name="mobile-drawer">
       <div
         v-if="mobileMenuOpen"
         class="lg:hidden border-box shadow-2xl fixed top-0 right-0 flex flex-col p-8 border-black space-y-8 bg-white text-black w-2/5 min-w-96 h-full z-45"
       >
-        <button class="ml-auto rounded-xl cursor-pointer" @click="toggleMenu">
+        <button class="ml-auto rounded-xl cursor-pointer" @click="toggleMenu()">
           <XIcon class="w-7 h-7" />
           <!-- <Icon name="Close" /> -->
         </button>

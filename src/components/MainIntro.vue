@@ -36,7 +36,7 @@
         threshold: 0.7,
       },
     }"
-    class="pt-8 pb-12 sm:pt-40 sm:pb-18 bg-white"
+    class="pt-4 pb-16 lg:pt-40 lg:pb-18 bg-white"
   >
     <div class="items-center max-w-7xl px-12 mx-auto sm:px-10 md:px-5">
       <div class="flex flex-wrap items-center -mx-3">
@@ -53,7 +53,7 @@
             </ul>
           </div>
         </div>
-        <div class="relative w-full px-3 mb-12 lg:-ml-10 lg:w-1/2 order-0 lg:order-1 lg:mb-0">
+        <div class="relative hidden lg:block w-full px-3 mb-12 lg:-ml-10 lg:w-1/2 order-0 lg:order-1 lg:mb-0">
           <img class="absolute top-0 right-0 z-10 hidden mx-auto -mt-32 rounded-lg shadow-2xl opacity-100 xl:-mr-12 sm:max-w-xs lg:max-w-sm lg:block" src="https://lh3.googleusercontent.com/p/AF1QipMDk0mVK-y8SBfGIwoTVKK9NFim-VbRnrKE-wsH=w960-h960-n-o-v1">
           <img class="relative z-20 w-full mx-auto mt-3 rounded-lg shadow-2xl sm:max-w-none lg:-ml-10 lg:max-w-sm" src="https://lh3.googleusercontent.com/p/AF1QipPGecb1C2LnU4DrBObeRdYlseqZECx-tGusFiSW=w960-h960-n-o-v1" alt="feature image">
           <img class="absolute bottom-0 right-0 z-10 hidden mx-auto -mb-48 rounded-lg shadow-2xl xl:-mr-12 sm:max-w-xs lg:max-w-sm lg:block" src="https://lh3.googleusercontent.com/p/AF1QipMibE-oC0Zn-0plivK-YF-reKxFuGvA-VvZDBWo=w960-h960-n-o-v1">

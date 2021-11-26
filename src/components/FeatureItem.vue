@@ -4,7 +4,7 @@
     <div class="box-border mx-auto border-solid lg:pl-8 ">
       <div class="flex flex-col items-center lg:items-start leading-7 text-gray-900 border-0 border-gray-200" :class="inverse ? 'lg:flex-row-reverse' : 'lg:flex-row'">
         <div
-          class="box-border flex flex-col justify-center w-full h-full p-8 text-gray-900 border-solid lg:w-1/2 md:p-16 lg:p-0 mt-12"
+          class="box-border flex flex-col justify-center w-full h-full p-8 text-gray-900 border-solid lg:w-1/2 md:p-16 lg:p-0 lg:mt-12"
 
           :class="inverse ? 'lg:pl-20' : 'lg:pl-48 lg:pr-20'"
         >
@@ -12,7 +12,7 @@
             {{ title }}
           </h2>
           <p class="mt-2 text-base text-yellow-400 text-left border-0 border-gray-200">
-            We offer the best features in the industry.
+            Fleet
           </p>
           <div class="grid gap-4 mt-8 leading-7 border-0 border-gray-200 sm:mt-10 sm:gap-6 lg:mt-6 lg:gap-4">
             <div v-for="feature in features" :key="feature" class="box-border flex items-start text-gray-900 border-solid">

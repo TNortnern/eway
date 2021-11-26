@@ -8,9 +8,9 @@
         threshold: 0.2,
       },
     }"
-    class="py-16 bg-[#0d0d0d] overflow-hidden lg:py-18 mt-48"
+    class="py-16 bg-[#0d0d0d] overflow-hidden lg:py-18 lg:mt-48"
   >
-    <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+    <div class="relative mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
       <!-- <svg
         class="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
         width="404"
@@ -81,7 +81,7 @@
       </svg> -->
       <!-- Section 1 -->
       <div class="bg-white shadow-2xl py-8 rounded-lg">
-        <SectionHeader class="text-center leading-8 tracking-tight mb-8">
+        <SectionHeader class="pl-8 md:pl-14 lg:(text-center pl-0) leading-8 tracking-tight mb-2 lg:mb-8">
           Features
         </SectionHeader>
         <FeatureItem title="Bolt 2" :features="bolt2Features" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd11b391050754a7b1449_Bolt-TWO-SCOOTER.png" inverse />
