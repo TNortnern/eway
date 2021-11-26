@@ -18,6 +18,7 @@ declare module 'vue' {
     Navbar2: typeof import('./components/Navbar2.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionHeader: typeof import('./components/SectionHeader.vue')['default']
+    TestimonialItem: typeof import('./components/TestimonialItem.vue')['default']
     Testimonials: typeof import('./components/Testimonials.vue')['default']
     TwoFeatures: typeof import('./components/TwoFeatures.vue')['default']
     WhoWeAre: typeof import('./components/WhoWeAre.vue')['default']
