@@ -17,7 +17,7 @@
 
       <h1>Coming soon.</h1>
       <p>This page is under construction.</p>
-      <button @click="router.back()">
+      <button class="hover:(shadow-2xl opacity-100) opacity-85 duration-150" @click="router.back()">
         Back to home
       </button>
     </div>
