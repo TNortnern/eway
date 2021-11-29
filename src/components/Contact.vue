@@ -300,7 +300,14 @@ import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 const router = useRouter()
 const sentMessage = ref('')
-const form = ref({
+interface ContactForm {
+  first_name?: string
+  last_name?: string
+  email?: string
+  phone?: string
+  service?: string
+}
+const form = ref<ContactForm>({
   first_name: '',
   last_name: '',
   email: '',
@@ -333,7 +340,13 @@ const sendEmail = async() => {
 
     })
     sentMessage.value = `Thank you ${form.value.first_name} ${form.value.last_name}, we've received your message.`
-    form.value = {}
+    form.value = {
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone: '',
+      service: '',
+    }
   }
   catch (error) {
     console.log('error', error)
