@@ -196,7 +196,7 @@
               </g>
             </svg>
             <svg
-              class="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-yellow-400 fill-current"
+              class="absolute bottom-0 right-4 md:right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-yellow-400 fill-current"
               viewBox="0 0 91 91"
               xmlns="http://www.w3.org/2000/svg"
             >
