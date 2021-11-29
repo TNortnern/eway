@@ -8,7 +8,7 @@
       active-class="text-yellow-400"
       :offset="170"
     >
-      <div class="mx-auto max-w-7xl px-4 2xl:px-0 justify-between flex flex-row items-center">
+      <div class="mx-auto max-w-7xl px-4 2xl:px-0 justify-between flex flex-row items-center border-b border-yellow-400 pb-4">
         <a href="/" class="cursor-pointer">
           <img src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/5ea825e6e815478d9817266a_BOLT-logo-Yellow-Higher%20Res.png" alt="logo" class="w-20" />
         </a>

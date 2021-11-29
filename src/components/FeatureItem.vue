@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="w-full h-full overflow-hidden leading-7 text-gray-900 border-0 border-gray-200 lg:w-1/2">
+        <div class="w-full h-full overflow-hidden leading-7 text-gray-900 border-0 border-gray-200 lg:w-[41%]">
           <img :src="src || 'https://lh3.googleusercontent.com/p/AF1QipMDk0mVK-y8SBfGIwoTVKK9NFim-VbRnrKE-wsH=w960-h960-n-o-v1'" class="object-cover w-full h-full rounded-none">
         </div>
       </div>

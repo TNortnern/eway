@@ -38,6 +38,6 @@ export const navLinks: navLink[] = [
   {
     name: 'Book Now',
     href: '#book-now',
-    class: 'flex items-center justify-center px-8 py-2 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)',
+    class: 'flex items-center justify-center px-8 py-1.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)',
   },
 ]

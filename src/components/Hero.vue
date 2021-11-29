@@ -11,7 +11,7 @@
     class="bg-[#0d0d0d] mb-12 lg:mb-0 text-white"
   >
     <Navbar />
-    <div class="relative mx-auto max-w-7xl">
+    <div class="relative mx-auto -mt-2 max-w-7xl">
       <main class="lg:relative">
         <div class="w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
           <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
@@ -25,10 +25,17 @@
             <p
               class="mt-3 max-w-md mx-auto text-lg text-gray-50 sm:text-xl md:mt-5 md:max-w-3xl"
             >
-              We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you've never seen it before. Give us a call to rent your scooters.
+              Eway is a scooter rental company based in Springfield, Missouri. Our scooters are used for recreational use, public tours, romatic dates, and school visitations. Riding with Eway LLC will show you the city like you've never seen it before. Give us a call to rent your scooters.
             </p>
             <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-              <p class="text-base font-medium text-gray-50">
+              <a
+                v-smooth-scroll
+                href="#book-now"
+                class="inline-flex items-center justify-center px-8 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)"
+              >
+                Start riding now!
+              </a>
+              <!-- <p class="text-base font-medium text-gray-50">
                 Subscribe to our newsletter
               </p>
               <form action="#" method="POST" class="mt-3 sm:flex">
@@ -53,7 +60,7 @@
                   href="#"
                   class="font-medium text-yellow-400 underline"
                 >Privacy Policy</a>.
-              </p>
+              </p>-->
             </div>
           </div>
         </div>
@@ -63,7 +70,7 @@
           <img
             class="absolute inset-0 w-full h-full object-cover"
             src="https://i.imgur.com/yPHkk1Z.jpg"
-            alt
+            alt="scooter hero"
           />
         </div>
       </main>

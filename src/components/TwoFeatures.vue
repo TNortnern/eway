@@ -21,8 +21,8 @@
         <SectionHeader class="pl-8 md:pl-14 lg:(text-center pl-0) leading-8 tracking-tight mb-2 lg:mb-8">
           Features
         </SectionHeader>
-        <FeatureItem title="Bolt 2" :features="bolt2Features" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd11b391050754a7b1449_Bolt-TWO-SCOOTER.png" inverse />
-        <FeatureItem title="Cruisers" :features="cruiserFeatures" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd0c6d5bf0c6ad3edaf37_Ojo-ByBolt-angle-Red.png" inverse />
+        <FeatureItem title="Bolt 2" :features="bolt2Features" src="/bolt2.png" inverse />
+        <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd0c6d5bf0c6ad3edaf37_Ojo-ByBolt-angle-Red.png" inverse />
       </div>
     </div>
   </section>
