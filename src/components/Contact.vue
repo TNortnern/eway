@@ -26,6 +26,7 @@
             </div>
           </div>
           <v-generic-form
+            ref="genericForm"
             class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-6/12"
             :schema="schema"
             @submit="sendEmail"
@@ -47,7 +48,7 @@
                   <ContactInput v-model="form.last_name" label="Last Name" placeholder="Doe" :error-message="firstError('last_name')" />
                   <ContactInput v-model="form.email" label="Email Address" placeholder="johndoe@email.com" :error-message="firstError('email')" />
                   <ContactInput v-model="form.phone" label="Phone Number" placeholder="Phone" :error-message="firstError('phone')" />
-                  <div class="relative">
+                  <div class="relative h-22">
                     <label
                       class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
                     >Service Needed</label>
@@ -85,6 +86,7 @@ import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 const router = useRouter()
 const sentMessage = ref('')
+const genericForm = ref<any>(null)
 const loading = ref(false)
 interface ContactForm {
   first_name?: string
@@ -161,13 +163,7 @@ const sendEmail = async(form: ContactForm) => {
         `,
 
     })
-    form = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      service: '',
-    }
+    genericForm.value.initializeForm()
   }
   catch (error) {
     console.log('error', error)

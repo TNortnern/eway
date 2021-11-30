@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-16">
+  <div class="relative h-16.5">
     <label
       class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
     >{{ label }}</label>
