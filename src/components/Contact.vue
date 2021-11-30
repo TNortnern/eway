@@ -25,88 +25,54 @@
               />
             </div>
           </div>
-          <form
+          <v-generic-form
             class="relative z-10 w-full max-w-2xl mt-20 lg:mt-0 lg:w-6/12"
-            @submit.prevent="sendEmail()"
+            :schema="schema"
+            @submit="sendEmail"
           >
-            <div
-              class="relative z-10 flex flex-col items-start justify-start p-10 bg-white w-full shadow-2xl rounded-xl"
-            >
-              <h4
-                class="w-full font-serif text-3xl lg:text-4xl font-medium leading-snug"
+            <template #default="{ formData: form, firstError }">
+              <div
+                class="relative z-10 flex flex-col items-start justify-start p-10 bg-white w-full shadow-2xl rounded-xl"
               >
-                Book a time to ride today.
-              </h4>
-              <p v-if="sentMessage" class="text-green-500 success">
-                {{ sentMessage }}
-              </p>
-              <div class="relative w-full mt-6 space-y-8">
-                <div class="relative">
-                  <label
-                    class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
-                  >First Name</label>
-                  <input
-                    v-model="form.first_name"
-                    type="text"
-                    class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder="John"
-                  />
-                </div>
-                <div class="relative">
-                  <label
-                    class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
-                  >Last Name</label>
-                  <input
-                    v-model="form.last_name"
-                    type="text"
-                    class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder="Doe"
-                  />
-                </div>
-                <div class="relative">
-                  <label
-                    class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
-                  >Email Address</label>
-                  <input
-                    v-model="form.email"
-                    type="text"
-                    class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder="janedoe@email.com"
-                  />
-                </div>
-                <div class="relative">
-                  <label class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white">Phone</label>
-                  <input
-                    v-model="form.phone"
-                    type="number"
-                    class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder="Phone Number"
-                  />
-                </div>
-                <div class="relative">
-                  <label
-                    class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
-                  >Service Needed</label>
-                  <textarea
-                    v-model="form.service"
-                    class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
-                    placeholder="Describe a service you are requesting for"
-                  />
-                </div>
-                <div class="relative">
-                  <button
-                    :class="!loading ? 'hover:bg-yellow-400 ease' : 'disabled cursor-not-allowed opacity-50'"
-                    class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg "
-                    @click="() => { }"
-                  >
-                    Submit
-                  </button>
+                <h4
+                  class="w-full font-serif text-3xl lg:text-4xl font-medium leading-snug"
+                >
+                  Book a time to ride today.
+                </h4>
+                <p v-if="sentMessage" class="text-green-500 success">
+                  {{ sentMessage }}
+                </p>
+                <div class="relative w-full mt-6 space-y-8">
+                  <ContactInput v-model="form.first_name" label="First Name" placeholder="John" :error-message="firstError('first_name')" />
+                  <ContactInput v-model="form.last_name" label="Last Name" placeholder="Doe" :error-message="firstError('last_name')" />
+                  <ContactInput v-model="form.email" label="Email Address" placeholder="johndoe@email.com" :error-message="firstError('email')" />
+                  <ContactInput v-model="form.phone" label="Phone Number" placeholder="Phone" :error-message="firstError('phone')" />
+                  <div class="relative">
+                    <label
+                      class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
+                    >Service Needed</label>
+                    <textarea
+                      v-model="form.service"
+                      class="block w-full px-4 py-4 mt-2 text-base placeholder-gray-400 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-black"
+                      placeholder="Describe a service you are requesting for"
+                    />
+                    <ErrorMessage :message="firstError('service')" />
+                  </div>
+                  <div class="relative">
+                    <button
+                      :class="!loading ? 'hover:bg-yellow-400 ease' : 'disabled cursor-not-allowed opacity-50'"
+                      class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg "
+                      @click="() => { }"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <ContactBottomLeftIcon />
-            <ContactBottomRightIcon />
-          </form>
+              <ContactBottomLeftIcon />
+              <ContactBottomRightIcon />
+            </template>
+          </v-generic-form>
         </div>
       </div>
     </section>
@@ -127,44 +93,75 @@ interface ContactForm {
   phone?: string
   service?: string
 }
-const form = ref<ContactForm>({
-  first_name: '',
-  last_name: '',
-  email: '',
-  phone: '',
-  service: '',
-})
+const schema = {
+  first_name: {
+    rules: {
+      isRequired: true,
+    },
+  },
+  last_name: {
+    rules: {
+      isRequired: true,
+    },
+  },
+  email: {
+    rules: {
+      isRequired: true,
+      email: {
+        message: '^Please enter a valid email.',
+      },
+    },
+  },
+  phone: {
+    rules: {
+      presence: false,
+      format: {
+        pattern:
+              // eslint-disable-next-line no-useless-escape
+              /^$|[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+        flags: 'i',
+        message: '^Please enter a valid phone number.',
+        allowEmpty: true,
+      },
+    },
+  },
+  service: {
+    rules: {
+      isRequired: true,
+    },
+  },
+}
 const visibilityChanged = (v: any, entry: any) => {
   if (v) {
     active.setActiveLink('')
     router?.push('#book-now')
   }
 }
-const sendEmail = async() => {
+const sendEmail = async(form: ContactForm) => {
   loading.value = true
   sentMessage.value = ''
   const emailBase = 'ewayllc@icloud.com'
   setTimeout(() => {
-    sentMessage.value = `Thank you ${form.value.first_name} ${form.value.last_name}, we've received your message.`
+    sentMessage.value = `Thank you ${form.first_name} ${form.last_name}, we've received your message.`
     loading.value = false
   }, 600)
   try {
     const { data } = await axios.post('https://eway-mail.herokuapp.com/mail', {
-      subject: `Message from website by: ${form.value.first_name} ${form.value.last_name}`,
+      subject: `Message from website by: ${form.first_name} ${form.last_name}`,
       to: emailBase,
       html: `
-        Hi Eway, I'm ${form.value.first_name} ${form.value.last_name},
+        Hi Eway, I'm ${form.first_name} ${form.last_name},
         <br>
-        I am messaging you to: ${form.value.service}.
+        I am messaging you to: ${form.service}.
         <br>
         <br>
-        My email is: ${form.value.email}
+        My email is: ${form.email}
         <br>
-        ${form.value.phone ? `My phone number is: ${form.value.phone}` : ''}
+        ${form.phone ? `My phone number is: ${form.phone}` : ''}
         `,
 
     })
-    form.value = {
+    form = {
       first_name: '',
       last_name: '',
       email: '',
