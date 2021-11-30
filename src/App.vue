@@ -19,6 +19,15 @@ useHead({
       name: 'og:image',
       content: 'https://lh3.googleusercontent.com/p/AF1QipPGecb1C2LnU4DrBObeRdYlseqZECx-tGusFiSW=w960-h960-n-o-v1',
     },
+    { name: 'twitter:title', content: 'Eway scooters' },
+    {
+      name: 'twitter:description',
+      content: 'We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://lh3.googleusercontent.com/p/AF1QipPGecb1C2LnU4DrBObeRdYlseqZECx-tGusFiSW=w960-h960-n-o-v1',
+    },
   ],
   link: [
     {

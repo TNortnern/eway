@@ -19,9 +19,9 @@
           class="flex flex-col items-center w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row lg:justify-between"
         >
           <div class="relative w-full max-w-md lg:max-w-full bg-cover lg:flex-1">
-            <div class="relative flex flex-col items-center justify-center w-full h-full lg:pr-10">
+            <div class="relative flex flex-col items-center justify-center w-full h-full lg:(pr-10 transform -translate-x-16)">
               <img
-                src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd0c6d5bf0c6ad3edaf37_Ojo-ByBolt-angle-Red.png"
+                src="https://www.abcjetski.com/wp-content/uploads/2017/10/discover-ojo-click-2.png"
               />
             </div>
           </div>
