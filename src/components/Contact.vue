@@ -95,7 +95,8 @@
                 </div>
                 <div class="relative">
                   <button
-                    class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg hover:bg-yellow-400 ease"
+                    :class="!loading ? 'hover:bg-yellow-400 ease' : 'disabled cursor-not-allowed opacity-50'"
+                    class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg "
                     @click="() => { }"
                   >
                     Submit
@@ -103,190 +104,8 @@
                 </div>
               </div>
             </div>
-            <svg
-              class="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-gray-200 fill-current"
-              viewBox="0 0 91 91"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                <g fill-rule="nonzero">
-                  <g>
-                    <g>
-                      <circle cx="3.261" cy="3.445" r="2.72" />
-                      <circle cx="15.296" cy="3.445" r="2.719" />
-                      <circle cx="27.333" cy="3.445" r="2.72" />
-                      <circle cx="39.369" cy="3.445" r="2.72" />
-                      <circle cx="51.405" cy="3.445" r="2.72" />
-                      <circle cx="63.441" cy="3.445" r="2.72" />
-                      <circle cx="75.479" cy="3.445" r="2.72" />
-                      <circle cx="87.514" cy="3.445" r="2.719" />
-                    </g>
-                    <g transform="translate(0 12)">
-                      <circle cx="3.261" cy="3.525" r="2.72" />
-                      <circle cx="15.296" cy="3.525" r="2.719" />
-                      <circle cx="27.333" cy="3.525" r="2.72" />
-                      <circle cx="39.369" cy="3.525" r="2.72" />
-                      <circle cx="51.405" cy="3.525" r="2.72" />
-                      <circle cx="63.441" cy="3.525" r="2.72" />
-                      <circle cx="75.479" cy="3.525" r="2.72" />
-                      <circle cx="87.514" cy="3.525" r="2.719" />
-                    </g>
-                    <g transform="translate(0 24)">
-                      <circle cx="3.261" cy="3.605" r="2.72" />
-                      <circle cx="15.296" cy="3.605" r="2.719" />
-                      <circle cx="27.333" cy="3.605" r="2.72" />
-                      <circle cx="39.369" cy="3.605" r="2.72" />
-                      <circle cx="51.405" cy="3.605" r="2.72" />
-                      <circle cx="63.441" cy="3.605" r="2.72" />
-                      <circle cx="75.479" cy="3.605" r="2.72" />
-                      <circle cx="87.514" cy="3.605" r="2.719" />
-                    </g>
-                    <g transform="translate(0 36)">
-                      <circle cx="3.261" cy="3.686" r="2.72" />
-                      <circle cx="15.296" cy="3.686" r="2.719" />
-                      <circle cx="27.333" cy="3.686" r="2.72" />
-                      <circle cx="39.369" cy="3.686" r="2.72" />
-                      <circle cx="51.405" cy="3.686" r="2.72" />
-                      <circle cx="63.441" cy="3.686" r="2.72" />
-                      <circle cx="75.479" cy="3.686" r="2.72" />
-                      <circle cx="87.514" cy="3.686" r="2.719" />
-                    </g>
-                    <g transform="translate(0 49)">
-                      <circle cx="3.261" cy="2.767" r="2.72" />
-                      <circle cx="15.296" cy="2.767" r="2.719" />
-                      <circle cx="27.333" cy="2.767" r="2.72" />
-                      <circle cx="39.369" cy="2.767" r="2.72" />
-                      <circle cx="51.405" cy="2.767" r="2.72" />
-                      <circle cx="63.441" cy="2.767" r="2.72" />
-                      <circle cx="75.479" cy="2.767" r="2.72" />
-                      <circle cx="87.514" cy="2.767" r="2.719" />
-                    </g>
-                    <g transform="translate(0 61)">
-                      <circle cx="3.261" cy="2.846" r="2.72" />
-                      <circle cx="15.296" cy="2.846" r="2.719" />
-                      <circle cx="27.333" cy="2.846" r="2.72" />
-                      <circle cx="39.369" cy="2.846" r="2.72" />
-                      <circle cx="51.405" cy="2.846" r="2.72" />
-                      <circle cx="63.441" cy="2.846" r="2.72" />
-                      <circle cx="75.479" cy="2.846" r="2.72" />
-                      <circle cx="87.514" cy="2.846" r="2.719" />
-                    </g>
-                    <g transform="translate(0 73)">
-                      <circle cx="3.261" cy="2.926" r="2.72" />
-                      <circle cx="15.296" cy="2.926" r="2.719" />
-                      <circle cx="27.333" cy="2.926" r="2.72" />
-                      <circle cx="39.369" cy="2.926" r="2.72" />
-                      <circle cx="51.405" cy="2.926" r="2.72" />
-                      <circle cx="63.441" cy="2.926" r="2.72" />
-                      <circle cx="75.479" cy="2.926" r="2.72" />
-                      <circle cx="87.514" cy="2.926" r="2.719" />
-                    </g>
-                    <g transform="translate(0 85)">
-                      <circle cx="3.261" cy="3.006" r="2.72" />
-                      <circle cx="15.296" cy="3.006" r="2.719" />
-                      <circle cx="27.333" cy="3.006" r="2.72" />
-                      <circle cx="39.369" cy="3.006" r="2.72" />
-                      <circle cx="51.405" cy="3.006" r="2.72" />
-                      <circle cx="63.441" cy="3.006" r="2.72" />
-                      <circle cx="75.479" cy="3.006" r="2.72" />
-                      <circle cx="87.514" cy="3.006" r="2.719" />
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <svg
-              class="absolute bottom-0 right-4 md:right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-yellow-400 fill-current"
-              viewBox="0 0 91 91"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                <g fill-rule="nonzero">
-                  <g>
-                    <g>
-                      <circle cx="3.261" cy="3.445" r="2.72" />
-                      <circle cx="15.296" cy="3.445" r="2.719" />
-                      <circle cx="27.333" cy="3.445" r="2.72" />
-                      <circle cx="39.369" cy="3.445" r="2.72" />
-                      <circle cx="51.405" cy="3.445" r="2.72" />
-                      <circle cx="63.441" cy="3.445" r="2.72" />
-                      <circle cx="75.479" cy="3.445" r="2.72" />
-                      <circle cx="87.514" cy="3.445" r="2.719" />
-                    </g>
-                    <g transform="translate(0 12)">
-                      <circle cx="3.261" cy="3.525" r="2.72" />
-                      <circle cx="15.296" cy="3.525" r="2.719" />
-                      <circle cx="27.333" cy="3.525" r="2.72" />
-                      <circle cx="39.369" cy="3.525" r="2.72" />
-                      <circle cx="51.405" cy="3.525" r="2.72" />
-                      <circle cx="63.441" cy="3.525" r="2.72" />
-                      <circle cx="75.479" cy="3.525" r="2.72" />
-                      <circle cx="87.514" cy="3.525" r="2.719" />
-                    </g>
-                    <g transform="translate(0 24)">
-                      <circle cx="3.261" cy="3.605" r="2.72" />
-                      <circle cx="15.296" cy="3.605" r="2.719" />
-                      <circle cx="27.333" cy="3.605" r="2.72" />
-                      <circle cx="39.369" cy="3.605" r="2.72" />
-                      <circle cx="51.405" cy="3.605" r="2.72" />
-                      <circle cx="63.441" cy="3.605" r="2.72" />
-                      <circle cx="75.479" cy="3.605" r="2.72" />
-                      <circle cx="87.514" cy="3.605" r="2.719" />
-                    </g>
-                    <g transform="translate(0 36)">
-                      <circle cx="3.261" cy="3.686" r="2.72" />
-                      <circle cx="15.296" cy="3.686" r="2.719" />
-                      <circle cx="27.333" cy="3.686" r="2.72" />
-                      <circle cx="39.369" cy="3.686" r="2.72" />
-                      <circle cx="51.405" cy="3.686" r="2.72" />
-                      <circle cx="63.441" cy="3.686" r="2.72" />
-                      <circle cx="75.479" cy="3.686" r="2.72" />
-                      <circle cx="87.514" cy="3.686" r="2.719" />
-                    </g>
-                    <g transform="translate(0 49)">
-                      <circle cx="3.261" cy="2.767" r="2.72" />
-                      <circle cx="15.296" cy="2.767" r="2.719" />
-                      <circle cx="27.333" cy="2.767" r="2.72" />
-                      <circle cx="39.369" cy="2.767" r="2.72" />
-                      <circle cx="51.405" cy="2.767" r="2.72" />
-                      <circle cx="63.441" cy="2.767" r="2.72" />
-                      <circle cx="75.479" cy="2.767" r="2.72" />
-                      <circle cx="87.514" cy="2.767" r="2.719" />
-                    </g>
-                    <g transform="translate(0 61)">
-                      <circle cx="3.261" cy="2.846" r="2.72" />
-                      <circle cx="15.296" cy="2.846" r="2.719" />
-                      <circle cx="27.333" cy="2.846" r="2.72" />
-                      <circle cx="39.369" cy="2.846" r="2.72" />
-                      <circle cx="51.405" cy="2.846" r="2.72" />
-                      <circle cx="63.441" cy="2.846" r="2.72" />
-                      <circle cx="75.479" cy="2.846" r="2.72" />
-                      <circle cx="87.514" cy="2.846" r="2.719" />
-                    </g>
-                    <g transform="translate(0 73)">
-                      <circle cx="3.261" cy="2.926" r="2.72" />
-                      <circle cx="15.296" cy="2.926" r="2.719" />
-                      <circle cx="27.333" cy="2.926" r="2.72" />
-                      <circle cx="39.369" cy="2.926" r="2.72" />
-                      <circle cx="51.405" cy="2.926" r="2.72" />
-                      <circle cx="63.441" cy="2.926" r="2.72" />
-                      <circle cx="75.479" cy="2.926" r="2.72" />
-                      <circle cx="87.514" cy="2.926" r="2.719" />
-                    </g>
-                    <g transform="translate(0 85)">
-                      <circle cx="3.261" cy="3.006" r="2.72" />
-                      <circle cx="15.296" cy="3.006" r="2.719" />
-                      <circle cx="27.333" cy="3.006" r="2.72" />
-                      <circle cx="39.369" cy="3.006" r="2.72" />
-                      <circle cx="51.405" cy="3.006" r="2.72" />
-                      <circle cx="63.441" cy="3.006" r="2.72" />
-                      <circle cx="75.479" cy="3.006" r="2.72" />
-                      <circle cx="87.514" cy="3.006" r="2.719" />
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
+            <ContactBottomLeftIcon />
+            <ContactBottomRightIcon />
           </form>
         </div>
       </div>
@@ -300,6 +119,7 @@ import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 const router = useRouter()
 const sentMessage = ref('')
+const loading = ref(false)
 interface ContactForm {
   first_name?: string
   last_name?: string
@@ -321,10 +141,15 @@ const visibilityChanged = (v: any, entry: any) => {
   }
 }
 const sendEmail = async() => {
+  loading.value = true
   sentMessage.value = ''
   const emailBase = 'ewayllc@icloud.com'
+  setTimeout(() => {
+    sentMessage.value = `Thank you ${form.value.first_name} ${form.value.last_name}, we've received your message.`
+    loading.value = false
+  }, 600)
   try {
-    const { data } = await axios.post('http://localhost:5000/mail', {
+    const { data } = await axios.post('https://eway-mail.herokuapp.com/mail', {
       subject: `Message from website by: ${form.value.first_name} ${form.value.last_name}`,
       to: emailBase,
       html: `
@@ -339,7 +164,6 @@ const sendEmail = async() => {
         `,
 
     })
-    sentMessage.value = `Thank you ${form.value.first_name} ${form.value.last_name}, we've received your message.`
     form.value = {
       first_name: '',
       last_name: '',
