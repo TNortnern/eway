@@ -22,6 +22,8 @@
             <div class="relative flex flex-col items-center justify-center w-full h-full lg:(pr-10 transform -translate-x-16)">
               <img
                 src="/contactcruiser.png"
+                alt="red ojo cruiser"
+                title="red ojo cruiser"
               />
             </div>
           </div>

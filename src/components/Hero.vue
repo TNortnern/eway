@@ -71,6 +71,7 @@
             class="absolute inset-0 w-full h-full object-cover"
             src="/3scoots.jpg"
             alt="scooter hero"
+            title="scooter hero"
           />
         </div>
       </main>
