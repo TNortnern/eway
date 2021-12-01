@@ -55,8 +55,8 @@
         </div>
         <div class="relative hidden lg:block w-full px-3 mb-12 lg:-ml-10 lg:w-1/2 order-0 lg:order-1 lg:mb-0">
           <img class="absolute top-0 right-0 z-10 hidden mx-auto -mt-32 rounded-lg shadow-2xl opacity-100 xl:-mr-12 sm:max-w-xs lg:max-w-sm lg:block" src="/forward5.jpeg">
-          <img class="relative z-20 w-full mx-auto mt-3 rounded-lg shadow-2xl sm:max-w-none lg:-ml-10 lg:max-w-sm" src="forward2.jpeg" alt="feature image">
-          <img class="absolute bottom-0 right-0 z-10 hidden mx-auto -mb-48 rounded-lg shadow-2xl xl:-mr-12 sm:max-w-xs lg:max-w-sm lg:block" src="sideways2.jpeg">
+          <img class="relative z-20 w-full mx-auto mt-3 rounded-lg shadow-2xl sm:max-w-none lg:-ml-10 lg:max-w-sm" src="/forward2.jpeg" alt="feature image">
+          <img class="absolute bottom-0 right-0 z-10 hidden mx-auto -mb-48 rounded-lg shadow-2xl xl:-mr-12 sm:max-w-xs lg:max-w-sm lg:block" src="/sideways2.jpeg">
         </div>
       </div>
     </div>
