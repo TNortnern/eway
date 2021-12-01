@@ -22,6 +22,7 @@ declare module 'vue' {
     MobileNavDrawer: typeof import('./components/Navbar/MobileNavDrawer.vue')['default']
     Navbar: typeof import('./components/Navbar/Navbar.vue')['default']
     Navbar2: typeof import('./components/Navbar2.vue')['default']
+    NavbarLogo: typeof import('./components/NavbarLogo.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionHeader: typeof import('./components/SectionHeader.vue')['default']
     TestimonialItem: typeof import('./components/TestimonialItem.vue')['default']

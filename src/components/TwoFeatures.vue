@@ -21,7 +21,7 @@
         <SectionHeader class="pl-8 md:pl-14 lg:(text-center pl-0) leading-8 tracking-tight mb-2 lg:mb-8">
           Features
         </SectionHeader>
-        <FeatureItem title="Bolt 2" :features="bolt2Features" src="/bolt2.png" :image="{ alt: 'bolt 2 scooter', title: 'bolt 2 scooter' }" />
+        <FeatureItem class="lg:mb-12" title="Bolt 2" :features="bolt2Features" src="/bolt2.png" :image="{ alt: 'bolt 2 scooter', title: 'bolt 2 scooter' }" />
         <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="/featurecruiser.png" :image="{ alt: 'red ojo cruiser', title: 'red ojo cruiser' }" />
       </div>
     </div>
