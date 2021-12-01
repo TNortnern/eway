@@ -21,7 +21,7 @@
           <div class="relative w-full max-w-md lg:max-w-full bg-cover lg:flex-1">
             <div class="relative flex flex-col items-center justify-center w-full h-full lg:(pr-10 transform -translate-x-16)">
               <img
-                src="https://www.abcjetski.com/wp-content/uploads/2017/10/discover-ojo-click-2.png"
+                src="/contactcruiser.png"
               />
             </div>
           </div>

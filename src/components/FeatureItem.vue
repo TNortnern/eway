@@ -2,11 +2,9 @@
   <!-- Section 1 -->
   <section class="relative leading-7 text-gray-900 bg-white border-solid">
     <div class="box-border mx-auto border-solid lg:pl-8 ">
-      <div class="flex flex-col items-center lg:items-start leading-7 text-gray-900 border-0 border-gray-200" :class="inverse ? 'lg:flex-row-reverse' : 'lg:flex-row'">
+      <div class="flex flex-col items-center lg:items-start leading-7 text-gray-900 border-0 border-gray-200 lg:flex-row-reverse">
         <div
-          class="box-border flex flex-col justify-center w-full h-full p-8 text-gray-900 border-solid lg:w-1/2 md:p-16 lg:p-0 lg:mt-12"
-
-          :class="inverse ? 'lg:pl-20' : 'lg:pl-48 lg:pr-20'"
+          class="box-border flex flex-col justify-center w-full h-full p-8 text-gray-900 border-solid lg:w-1/2 md:p-16 lg:p-0 lg:mt-12 lg:pl-20"
         >
           <h2 class="m-0 text-3xl font-medium leading-tight tracking-tight text-left text-black sm:text-4xl md:text-4xl">
             {{ title }}
@@ -46,5 +44,6 @@ defineProps<{
   src?: string
   features: string[]
   title: string
+  image?: object
 }>()
 </script>

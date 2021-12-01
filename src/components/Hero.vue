@@ -69,7 +69,7 @@
         >
           <img
             class="absolute inset-0 w-full h-full object-cover"
-            src="https://i.imgur.com/yPHkk1Z.jpg"
+            src="/3scoots.jpg"
             alt="scooter hero"
           />
         </div>

@@ -16,12 +16,12 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
+      content: 'Eway is a scooter rental company based in Springfield, Missouri. Our scooters are used for recreational use, public tours, romatic dates, and school visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
     },
     { name: 'og:title', content: 'Eway scooters' },
     {
       name: 'og:description',
-      content: 'We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
+      content: 'Eway is a scooter rental company based in Springfield, Missouri. Our scooters are used for recreational use, public tours, romatic dates, and school visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
     },
     {
       name: 'og:image',
@@ -30,7 +30,7 @@ useHead({
     { name: 'twitter:title', content: 'Eway scooters' },
     {
       name: 'twitter:description',
-      content: 'We rent scooters to the general public for Recreation, Tours, Dates, and School Visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
+      content: 'Eway is a scooter rental company based in Springfield, Missouri. Our scooters are used for recreational use, public tours, romatic dates, and school visitations. Riding with Eway LLC will show you the city like you\'ve never seen it before. Give us a call to rent your scooters.',
     },
     {
       name: 'twitter:image',

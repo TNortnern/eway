@@ -22,7 +22,7 @@
           Features
         </SectionHeader>
         <FeatureItem title="Bolt 2" :features="bolt2Features" src="/bolt2.png" inverse />
-        <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbd0c6d5bf0c6ad3edaf37_Ojo-ByBolt-angle-Red.png" inverse />
+        <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="/featurecruiser.png" inverse />
       </div>
     </div>
   </section>
