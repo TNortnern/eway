@@ -4,19 +4,26 @@
     <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
       <nav class="md:-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
         <div v-for="item in navigation.main" :key="item.name" class="px-5 py-2">
-          <router-link :to="item.href" :href="item.href" class="text-base text-gray-50 hover:(text-gray-300 underline)">
+          <router-link :title="item.name" :to="item.href" :href="item.href" class="text-base text-gray-50 hover:(text-gray-300 underline)">
             {{ item.name }}
           </router-link>
         </div>
       </nav>
       <div class="mt-8 flex justify-center space-x-6">
-        <a v-for="item in navigation.social" :key="item.name" :href="item.href" target="__blank" class="text-gray-50 hover:text-gray-400">
+        <a
+          v-for="item in navigation.social"
+          :key="item.name"
+          :href="item.href"
+          :title="item.name"
+          target="__blank"
+          class="text-gray-50 hover:text-gray-400"
+        >
           <span class="sr-only">{{ item.name }}</span>
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
         </a>
       </div>
       <p class="mt-8 text-center text-base text-gray-200">
-        &copy; 2020 Workflow, Inc. All rights reserved.
+        &copy; {{ new Date().getFullYear() }} Eway LLC, Inc. All rights reserved.
       </p>
     </div>
   </footer>
@@ -27,7 +34,7 @@ import { defineComponent, h } from 'vue'
 const comingSoon = '/comingsoon'
 const navigation = {
   main: [
-    { name: 'About', href: comingSoon },
+    { name: 'About', href: '/about-us' },
     { name: 'Blog', href: '/blog' },
     { name: 'Jobs', href: comingSoon },
     { name: 'Press', href: comingSoon },

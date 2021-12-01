@@ -3,9 +3,10 @@
   <div>
     <div id="nav" class="py-8" always-track active-class="text-yellow-400" :offset="170">
       <div
-        class="mx-auto max-w-7xl px-4 2xl:px-0 justify-between flex flex-row items-center border-b border-yellow-400 pb-4"
+        class="mx-auto max-w-7xl px-4 2xl:px-0 justify-between flex flex-row items-center"
+        :class="border ? 'border-b border-yellow-400 pb-4' : ''"
       >
-        <a title="Home" href="/" class="cursor-pointer">
+        <router-link title="Home" to="/" class="cursor-pointer">
           <NavbarLogo />
 
           <!-- <img
@@ -13,7 +14,7 @@
             alt="logo"
             class="w-20"
           /> -->
-        </a>
+        </router-link>
         <!-- show this if screen is lg (desktop view) -->
         <DesktopNavbar :nav-links="navLinks" :toggle-modal="toggle" />
         <!-- show this if screen is not lg (mobile view) -->
@@ -30,14 +31,14 @@
       :offset="170"
     >
       <div class="mx-auto max-w-7xl px-4 2xl:px-0 justify-between flex flex-row items-center">
-        <a title="Home" href="/" class="cursor-pointer">
+        <router-link title="Home" to="/" class="cursor-pointer">
           <NavbarLogo />
           <!-- <img
             src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/5ea825e6e815478d9817266a_BOLT-logo-Yellow-Higher%20Res.png"
             alt="logo"
             class="w-20"
           /> -->
-        </a>
+        </router-link>
         <!-- show this if screen is lg (desktop view) -->
         <DesktopNavbar :nav-links="navLinks" :toggle-modal="toggle" />
         <!-- show this if screen is not lg (mobile view) -->
@@ -52,6 +53,12 @@ import { onMounted, ref } from 'vue'
 import { open } from './state'
 import { links } from '~/store/routes'
 export default {
+  props: {
+    border: {
+      type: Boolean,
+      default: true,
+    },
+  },
   setup() {
     const active = ref(false)
     const toggleNavClass = () => {
