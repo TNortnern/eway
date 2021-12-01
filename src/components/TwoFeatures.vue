@@ -29,23 +29,24 @@
 </template>
 
 <script lang="ts" setup>
+import { GlobeIcon, LightBulbIcon, LightningBoltIcon, PlusCircleIcon, SparklesIcon, VolumeUpIcon, WifiIcon } from '@heroicons/vue/outline'
 import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 const router = useRouter()
 const bolt2Features = [
-  'Wireless phone charger',
-  'Up to 15 MPH',
-  '40 mile range',
-  '4 hours of battery time',
-  'Front shocks',
-  'Pneumatic tubeless tires',
+  { text: 'Wireless phone charger', icon: WifiIcon },
+  { text: 'Up to 15 MPH', icon: LightningBoltIcon },
+  { text: '40 mile range', icon: GlobeIcon },
+  { text: '4 hours of battery time', icon: LightBulbIcon },
+  { text: 'Front shocks', icon: SparklesIcon },
+  { text: 'Pneumatic tubeless tires', icon: PlusCircleIcon },
 ]
 const cruiserFeatures = [
-  'Built in bluetooth speaker',
-  'Up to 20 MPH',
-  '40 mile range',
-  '4 hours of battery time',
-  'Sit down',
+  { text: 'Built in bluetooth speaker', icon: VolumeUpIcon },
+  { text: 'Up to 20 MPH', icon: LightningBoltIcon },
+  { text: '40 mile range', icon: GlobeIcon },
+  { text: '4 hours of battery time', icon: LightBulbIcon },
+  { text: 'Sit down', icon: '' },
 ]
 const visibilityChanged = (v: any, entry: any) => {
   if (v) {

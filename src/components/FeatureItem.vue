@@ -16,12 +16,20 @@
             <div v-for="feature in features" :key="feature" class="box-border flex items-start text-gray-900 border-solid">
               <div class="flex items-center justify-center w-11 h-11 leading-7 bg-yellow-400 border-0 border-gray-200 rounded-full">
                 <p class="box-border m-0 text-xl text-white border-solid">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                  <component :is="feature.icon" v-if="feature.icon" class="w-6 h-6" />
+                  <svg
+                    v-else
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                 </p>
               </div>
               <div class="flex-1 ml-6 leading-7 border-0 border-gray-200">
                 <h3 class="box-border m-0 text-lg font-semibold leading-tight tracking-tight text-black border-solid sm:text-xl md:text-lg">
-                  {{ feature }}
+                  {{ feature.text }}
                 </h3>
                 <!-- <p class="box-border mt-2 text-base leading-normal text-gray-900 border-solid">
                   No more wasting time on manual tasks, you can leverage our automated tasks to make your life easier.
@@ -39,10 +47,14 @@
 </template>
 
 <script setup lang="ts">
+interface FeatureItem {
+  text?: string
+  icon?: any
+}
 defineProps<{
   inverse?: boolean
   src?: string
-  features: string[]
+  features: FeatureItem[]
   title: string
   image?: object
 }>()
