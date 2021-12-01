@@ -16,6 +16,7 @@
           <a
             v-if="navLink.name !== 'About'"
             v-smooth-scroll
+            :name="navLink.name"
             class="scrollactive-item"
             :class="[navLink.class, active.isActiveLink(navLink.href) ? 'text-yellow-400' : 'hover:text-yellow-400 transition duration-150']"
             :href="navLink.href"
