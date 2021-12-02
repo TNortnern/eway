@@ -19,12 +19,10 @@
           class="flex flex-col items-center w-full px-10 pt-5 pb-20 lg:pt-20 lg:flex-row lg:justify-between"
         >
           <div class="relative w-full max-w-md lg:max-w-full bg-cover lg:flex-1">
-            <div class="relative flex flex-col items-center justify-center w-full h-full lg:(pr-10 transform -translate-x-16)">
-              <img
-                src="/contactcruiser.png"
-                alt="red ojo cruiser"
-                title="red ojo cruiser"
-              />
+            <div
+              class="relative flex flex-col items-center justify-center w-full h-full lg:(pr-10 transform -translate-x-16)"
+            >
+              <img src="/contactcruiser.png" alt="red ojo cruiser" title="red ojo cruiser" />
             </div>
           </div>
           <v-generic-form
@@ -46,10 +44,30 @@
                   {{ sentMessage }}
                 </p>
                 <div class="relative w-full mt-6 space-y-8">
-                  <ContactInput v-model="form.first_name" label="First Name" placeholder="John" :error-message="firstError('first_name')" />
-                  <ContactInput v-model="form.last_name" label="Last Name" placeholder="Doe" :error-message="firstError('last_name')" />
-                  <ContactInput v-model="form.email" label="Email Address" placeholder="johndoe@email.com" :error-message="firstError('email')" />
-                  <ContactInput v-model="form.phone" label="Phone Number" placeholder="Phone" :error-message="firstError('phone')" />
+                  <ContactInput
+                    v-model="form.first_name"
+                    label="First Name"
+                    placeholder="John"
+                    :error-message="firstError('first_name')"
+                  />
+                  <ContactInput
+                    v-model="form.last_name"
+                    label="Last Name"
+                    placeholder="Doe"
+                    :error-message="firstError('last_name')"
+                  />
+                  <ContactInput
+                    v-model="form.email"
+                    label="Email Address"
+                    placeholder="johndoe@email.com"
+                    :error-message="firstError('email')"
+                  />
+                  <ContactInput
+                    v-model="form.phone"
+                    label="Phone Number"
+                    placeholder="Phone"
+                    :error-message="firstError('phone')"
+                  />
                   <div class="relative h-22">
                     <label
                       class="absolute px-2 ml-2 -mt-3 font-medium text-gray-600 bg-white"
@@ -64,7 +82,7 @@
                   <div class="relative">
                     <button
                       :class="!loading ? 'hover:bg-yellow-400 ease' : 'disabled cursor-not-allowed opacity-50'"
-                      class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg "
+                      class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-yellow-300 rounded-lg"
                       @click="() => { }"
                     >
                       Submit
@@ -121,8 +139,8 @@ const schema = {
       presence: false,
       format: {
         pattern:
-              // eslint-disable-next-line no-useless-escape
-              /^$|[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+          // eslint-disable-next-line no-useless-escape
+          /^$|[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
         flags: 'i',
         message: '^Please enter a valid phone number.',
         allowEmpty: true,
@@ -148,6 +166,7 @@ const sendEmail = async(form: ContactForm) => {
   setTimeout(() => {
     sentMessage.value = `Thank you ${form.first_name} ${form.last_name}, we've received your message.`
     loading.value = false
+    genericForm.value.initializeForm()
   }, 600)
   try {
     const { data } = await axios.post('https://eway-mail.herokuapp.com/mail', {
@@ -165,7 +184,6 @@ const sendEmail = async(form: ContactForm) => {
         `,
 
     })
-    genericForm.value.initializeForm()
   }
   catch (error) {
     console.log('error', error)
