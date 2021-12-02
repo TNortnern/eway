@@ -5,6 +5,8 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import VueSmoothScroll from 'vue3-smooth-scroll'
 import VueObserveVisibility from 'vue3-observe-visibility2'
 import vGenericFrom from 'v-generic-form'
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
 import App from './App.vue'
 
 // windicss layers
@@ -32,10 +34,16 @@ export const createApp = ViteSSG(
         },
       },
     }
-    const { app } = ctx
+    const { app, isClient } = ctx
+    // console.log('ctx', ctx)
     app.use(VueSmoothScroll)
     app.mixin(globalMixin)
     app.use(vGenericFrom)
+    // if (isClient) {
+    //   app.use(AOS.init({
+    //     once: true,
+    //   }))
+    // }
     app.use(VueObserveVisibility)
 
     // or custom global options
