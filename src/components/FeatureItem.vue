@@ -27,7 +27,7 @@
                   ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                 </p>
               </div>
-              <div class="flex-1 ml-6 leading-7 border-0 border-gray-200">
+              <div class="flex-1 self-center ml-6 leading-7 border-0 border-gray-200">
                 <h3 class="box-border m-0 text-lg font-semibold leading-tight tracking-tight text-black border-solid sm:text-xl md:text-lg">
                   {{ feature.text }}
                 </h3>
