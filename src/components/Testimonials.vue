@@ -21,7 +21,7 @@
             Don't just take our word for it
           </p>
           <h2
-            class="relative flex items-start justify-start w-full max-w-3xl lg:(text-5xl) text-3xl font-bold lg:justify-center"
+            class="relative flex items-start justify-start w-full max-w-3xl lg:(text-5xl) text-3xl font-bold lg:justify-center text-headingColor"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

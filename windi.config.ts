@@ -14,6 +14,9 @@ export default defineConfig({
   ],
   theme: {
     extend: {
+      colors: {
+        headingColor: 'rgb(55, 65, 81)',
+      },
       typography: {
         DEFAULT: {
           css: {

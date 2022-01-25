@@ -36,7 +36,7 @@
                 class="relative z-10 flex flex-col items-start justify-start p-10 bg-white w-full shadow-2xl rounded-xl"
               >
                 <h4
-                  class="w-full font-serif text-3xl lg:text-4xl font-medium leading-snug"
+                  class="w-full font-serif text-3xl lg:text-4xl font-medium leading-snug text-headingColor"
                 >
                   Book a time to ride today.
                 </h4>
