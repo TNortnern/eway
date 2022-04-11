@@ -1,17 +1,21 @@
 import { createPinia } from 'pinia'
+import { useRootStore } from '~/stores/root'
 import { UserModule } from '~/types'
 
-// Setup Pinia
-// https://pinia.esm.dev/
-export const install: UserModule = ({ isClient, initialState, app }) => {
+export const install: UserModule = ({ initialState, app, router }) => {
   const pinia = createPinia()
   app.use(pinia)
-  // Refer to
-  // https://github.com/antfu/vite-ssg/blob/main/README.md#state-serialization
-  // for other serialization strategies.
-  if (isClient)
-    pinia.state.value = (initialState.pinia) || {}
+  if (import.meta.env.SSR)
+    initialState.pinia = pinia.state.value
 
   else
-    initialState.pinia = pinia.state.value
+    pinia.state.value = initialState.pinia || {}
+
+  router.beforeEach(async(to, from, next) => {
+    const rootStore = useRootStore(pinia)
+    if (!rootStore.dataLoaded)
+      await rootStore.initialize()
+
+    next()
+  })
 }

@@ -3,6 +3,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "module": "ESNext",
+    "jsx": "preserve",
     "target": "es2016",
     "lib": ["DOM", "ESNext"],
     "strict": true,
