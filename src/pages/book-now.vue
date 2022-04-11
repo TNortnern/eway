@@ -27,7 +27,7 @@
           :data-item-name="product.name"
           :data-item-id="product.id"
           :data-item-price="product.price"
-          :data-item-url="`/.netlify/functions/crawler`"
+          :data-item-url="`https://moonlit-pixie-20706b.netlify.app/book-now`"
           :data-item-description="product.description"
           :data-item-image="product.image"
           @click="submit()"
