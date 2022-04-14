@@ -4,12 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppInput: typeof import('./components/AppInput.vue')['default']
     Button: typeof import('./components/Button.vue')['default']
     ComingSoon: typeof import('./components/ComingSoon.vue')['default']
     Contact: typeof import('./components/Contact.vue')['default']
     ContactBottomLeftIcon: typeof import('./components/ContactBottomLeftIcon.vue')['default']
     ContactBottomRightIcon: typeof import('./components/ContactBottomRightIcon.vue')['default']
     ContactInput: typeof import('./components/ContactInput.vue')['default']
+    'ContactInput copy': typeof import('./components/ContactInput copy.vue')['default']
     DesktopNavbar: typeof import('./components/Navbar/DesktopNavbar.vue')['default']
     ErrorMessage: typeof import('./components/ErrorMessage.vue')['default']
     FeatureItem: typeof import('./components/FeatureItem.vue')['default']

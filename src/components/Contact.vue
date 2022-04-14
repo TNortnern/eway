@@ -44,25 +44,25 @@
                   {{ sentMessage }}
                 </p>
                 <div class="relative w-full mt-6 space-y-8">
-                  <ContactInput
+                  <AppInput
                     v-model="form.first_name"
                     label="First Name"
                     placeholder="John"
                     :error-message="firstError('first_name')"
                   />
-                  <ContactInput
+                  <AppInput
                     v-model="form.last_name"
                     label="Last Name"
                     placeholder="Doe"
                     :error-message="firstError('last_name')"
                   />
-                  <ContactInput
+                  <AppInput
                     v-model="form.email"
                     label="Email Address"
                     placeholder="johndoe@email.com"
                     :error-message="firstError('email')"
                   />
-                  <ContactInput
+                  <AppInput
                     v-model="form.phone"
                     label="Phone Number"
                     placeholder="Phone"
