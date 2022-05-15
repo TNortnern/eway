@@ -251,15 +251,15 @@ useNewElement([
     },
     appendTo: 'body',
   },
-  {
-    el: 'div',
-    attributes: {
-      'hidden': true,
-      'id': 'snipcart',
-      'data-api-key': 'OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw',
-    },
-    appendTo: 'body',
-  },
+  // {
+  //   el: 'div',
+  //   attributes: {
+  //     'hidden': true,
+  //     'id': 'snipcart',
+  //     'data-api-key': 'OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw',
+  //   },
+  //   appendTo: 'body',
+  // },
 ],
 )
 
