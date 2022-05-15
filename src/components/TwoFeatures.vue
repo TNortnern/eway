@@ -22,7 +22,7 @@
           Features
         </SectionHeader>
         <FeatureItem class="lg:mb-12" title="Bolt 2" :features="bolt2Features" src="/bolt2.png" :image="{ alt: 'bolt 2 scooter', title: 'bolt 2 scooter' }" />
-        <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="/featurecruiser.png" :image="{ alt: 'red ojo cruiser', title: 'red ojo cruiser' }" />
+        <!-- <FeatureItem title="OJO Cruisers" :features="cruiserFeatures" src="/featurecruiser.png" :image="{ alt: 'red ojo cruiser', title: 'red ojo cruiser' }" /> -->
       </div>
     </div>
   </section>

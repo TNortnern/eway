@@ -3,7 +3,7 @@
   <div>
     <!-- Section 1 -->
     <section
-      id="book-now"
+      id="contact"
       v-observe-visibility="{
         callback: visibilityChanged,
         intersection: {
@@ -156,7 +156,7 @@ const schema = {
 const visibilityChanged = (v: any, entry: any) => {
   if (v) {
     active.setActiveLink('')
-    router?.push('#book-now')
+    router?.push('#contact')
   }
 }
 const sendEmail = async(form: ContactForm) => {

@@ -52,9 +52,12 @@ export const navLinks: navLink[] = [
     name: 'Testimonials',
     href: '#testimonials',
   },
+  // {
+  //   name: 'Contact',
+  //   href: '#contact',
+  // },
   {
     name: 'Book Now',
-    href: '#book-now',
     action: toggleBookNow,
     class: 'flex items-center justify-center px-8 py-1.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)',
   },
