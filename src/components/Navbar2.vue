@@ -196,7 +196,7 @@
           >Sign in</a> -->
           <a
             href="#"
-            class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-14 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500) duration-150"
+            class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-14 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white) duration-150"
           >Book now</a>
         </div>
       </div>
@@ -276,7 +276,7 @@
             <div>
               <a
                 href="#"
-                class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-400 hover:bg-yellow-700"
+                class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-700 text-white)"
               >Book Now</a>
               <!-- <p class="mt-6 text-center text-base font-medium text-gray-500">
                 Existing customer?

@@ -13,14 +13,26 @@
           <!-- <Icon name="Close" /> -->
         </button>
         <div v-for="navLink in navLinks" :key="navLink.name">
-          <a
-            v-if="navLink.name !== 'About'"
-            v-smooth-scroll
-            :name="navLink.name"
-            class="scrollactive-item"
-            :class="[navLink.class, active.isActiveLink(navLink.href) ? 'text-yellow-400' : 'hover:text-yellow-400 transition duration-150']"
-            :href="navLink.href"
-          >{{ navLink.name }}</a>
+          <template v-if="navLink.name !== 'About'">
+            <a
+              v-if="!navLink.action"
+              v-smooth-scroll
+              :name="navLink.name"
+              class="scrollactive-item"
+              :class="[navLink.class, active.isActiveLink(navLink.href) ? 'text-yellow-400' : 'hover:text-yellow-400 transition duration-150']"
+              :href="navLink.href"
+            >{{ navLink.name }}</a>
+            <button
+              v-else
+              class="transition duration-150 block w-full"
+              :class="navLink.class"
+              v-on="{
+                ...( navLink.action && { click: navLink.action } )
+              }"
+            >
+              {{ navLink.name }}
+            </button>
+          </template>
         </div>
       </div>
     </transition>

@@ -28,13 +28,12 @@
               Eway LLC is an electric scooter rental company based in Springfield, Missouri. Our scooters are used for recreational use, public tours, romatic dates, and school visitations. Riding with Eway LLC will show you the city like you've never seen it before. Give us a call to rent your scooters.
             </p>
             <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-              <a
-                v-smooth-scroll
-                href="#book-now"
+              <Button
                 class="inline-flex items-center justify-center px-8 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)"
+                @click="toggleBookNow(true)"
               >
                 Start riding now!
-              </a>
+              </Button>
               <!-- <p class="text-base font-medium text-gray-50">
                 Subscribe to our newsletter
               </p>
@@ -78,34 +77,20 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import {
-  MenuIcon,
-  XIcon,
-} from '@heroicons/vue/outline'
-import { ChevronDownIcon } from '@heroicons/vue/solid'
+<script lang="ts" setup>
+// import {
+//   MenuIcon,
+//   XIcon,
+// } from '@heroicons/vue/outline'
+// import { ChevronDownIcon } from '@heroicons/vue/solid'
 import useActiveLink from '~/composables/useActiveLink'
-
-export default {
-  components: {
-    // Navbar,
-    ChevronDownIcon,
-    XIcon,
-    MenuIcon,
-  },
-  setup() {
-    const active = useActiveLink()
-    const router = useRouter()
-    const visibilityChanged = (v: any, entry: any) => {
-      if (v) {
-        active.setActiveLink('')
-        router?.push('')
-      }
-    }
-
-    return {
-      visibilityChanged,
-    }
-  },
+import { toggleBookNow } from '~/components/Navbar/state'
+const active = useActiveLink()
+const router = useRouter()
+const visibilityChanged = (v: any, entry: any) => {
+  if (v) {
+    active.setActiveLink('')
+    router?.push('')
+  }
 }
 </script>

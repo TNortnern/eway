@@ -5,6 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AppInput: typeof import('./components/AppInput.vue')['default']
+    BookNowDrawer: typeof import('./components/BookNowDrawer.vue')['default']
     Button: typeof import('./components/Button.vue')['default']
     ComingSoon: typeof import('./components/ComingSoon.vue')['default']
     Contact: typeof import('./components/Contact.vue')['default']

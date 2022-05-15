@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -38,5 +38,42 @@ useHead({
 </script>
 
 <template>
+  <div id="snipcart" hidden data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw">
+    <billing section="bottom">
+      <fieldset class="snipcart-form__set">
+        <!-- <div class="snipcart-form__field">
+          <div class="snipcart-form__field-checkbox">
+            <snipcart-checkbox name="subscribeToNewsletter"></snipcart-checkbox>
+            <snipcart-label for="subscribeToNewsletter" class="snipcart__font--tiny snipcart-form__label--checkbox">
+              Subscribe to newsletter
+            </snipcart-label>
+          </div>
+        </div> -->
+        <!-- <div class="snipcart-form__field">
+          <p>Pick your date</p>
+          <input id="" name="">
+          <snipcart-label class="snipcart__font--tiny" for="vatNumber">
+            VAT Number
+          </snipcart-label>
+          <snipcart-input type="date" name="vatNumber"></snipcart-input>
+        </div>
+
+        <div class="snipcart-form__field">
+          <p class="snipcart__font--tiny">
+            Customer type
+          </p>
+          <snipcart-radio name="customerType" value="Corporate">
+            Corporate
+          </snipcart-radio>
+          <snipcart-radio name="customerType" value="Personal">
+            Personal
+          </snipcart-radio>
+          <snipcart-radio name="customerType" value="NonProfit">
+            Non-profit
+          </snipcart-radio>
+        </div> -->
+      </fieldset>
+    </billing>
+  </div>
   <router-view />
 </template>

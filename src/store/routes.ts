@@ -1,9 +1,9 @@
 interface navLink {
-  name: String,
+  name: String
   href: String
 }
 
-export const links : navLink[] = [
+export const links: navLink[] = [
   {
     name: 'Who we are',
     href: '#who',
