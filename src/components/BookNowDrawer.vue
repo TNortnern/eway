@@ -106,6 +106,7 @@ onClickOutside(drawer, () => toggleBookNow(false))
 const props = defineProps<{ open: boolean; route?: boolean }>()
 watch(() => props.open, (v) => {
   if (v) document.querySelector('body')?.classList.add('overflow-hidden')
+  else document.querySelector('body')?.classList.remove('overflow-hidden')
 })
 const rootStore = useRootStore()
 const product = rootStore.products?.[0]
