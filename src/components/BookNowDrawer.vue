@@ -1,7 +1,11 @@
 <template>
   <div>
-    <!-- <div id="snipcart" hidden data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw">
-    </div> -->
+    <div
+      id="snipcart"
+      hidden
+      data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw"
+    >
+    </div>
     <transition name="fade">
       <div v-if="product && open" class="fixed z-17 bg-black bg-opacity-60 inset-0">
         <div v-if="route" class="text-center">
@@ -148,7 +152,7 @@ const submit = async() => {
       for (let i = 0; i < fieldsToCheck.length; i++) {
         const cartValue = fieldsToCheck[i] === bookDateName ? item?.customFields[0]?.displayValue : item[fieldsToCheck[i]].toString()
         const formValue = fieldsToCheck[i] === bookDateName ? parseDate(new Date(form.date)).toString() : product[fieldsToCheck[i]].toString()
-        if (cartValue.toLowerCase() !== formValue.toLowerCase()) {
+        if (cartValue?.toLowerCase() !== formValue?.toLowerCase()) {
           exists = false
           break
         }
