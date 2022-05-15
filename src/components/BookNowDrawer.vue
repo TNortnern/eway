@@ -1,45 +1,5 @@
 <template>
   <div>
-    <Teleport to="body">
-      <client-only>
-        <div id="snipcart" hidden data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw">
-          <billing section="bottom">
-            <fieldset class="snipcart-form__set">
-            <!-- <div class="snipcart-form__field">
-                <div class="snipcart-form__field-checkbox">
-                  <snipcart-checkbox name="subscribeToNewsletter"></snipcart-checkbox>
-                  <snipcart-label for="subscribeToNewsletter" class="snipcart__font--tiny snipcart-form__label--checkbox">
-                    Subscribe to newsletter
-                  </snipcart-label>
-                </div>
-              </div> -->
-            <!-- <div class="snipcart-form__field">
-                <p>Pick your date</p>
-                <input id="" name="">
-                <snipcart-label class="snipcart__font--tiny" for="vatNumber">
-                  VAT Number
-                </snipcart-label>
-                <snipcart-input type="date" name="vatNumber"></snipcart-input>
-              </div>
-              <div class="snipcart-form__field">
-                <p class="snipcart__font--tiny">
-                  Customer type
-                </p>
-                <snipcart-radio name="customerType" value="Corporate">
-                  Corporate
-                </snipcart-radio>
-                <snipcart-radio name="customerType" value="Personal">
-                  Personal
-                </snipcart-radio>
-                <snipcart-radio name="customerType" value="NonProfit">
-                  Non-profit
-                </snipcart-radio>
-              </div> -->
-            </fieldset>
-          </billing>
-        </div>
-      </client-only>
-    </Teleport>
     <!-- <div id="snipcart" hidden data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw">
     </div> -->
     <transition name="fade">
@@ -291,15 +251,15 @@ useNewElement([
     },
     appendTo: 'body',
   },
-  // {
-  //   el: 'div',
-  //   attributes: {
-  //     'hidden': true,
-  //     'id': 'snipcart',
-  //     'data-api-key': 'OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw',
-  //   },
-  //   appendTo: 'body',
-  // },
+  {
+    el: 'div',
+    attributes: {
+      'hidden': true,
+      'id': 'snipcart',
+      'data-api-key': 'OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw',
+    },
+    appendTo: 'body',
+  },
 ],
 )
 
