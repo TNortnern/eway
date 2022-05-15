@@ -4,6 +4,7 @@
     "build": "cross-env NODE_ENV=production vite-ssg build",
     "dev": "vite --port 3333",
     "dev:open": "vite --port 3333 --open",
+    "fix:ssr": "yarn add -D patch-vue-directive-ssr",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "test": "cypress open",
     "preview": "vite preview",

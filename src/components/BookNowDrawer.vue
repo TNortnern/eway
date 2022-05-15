@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- <div id="snipcart" hidden data-api-key="OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw">
+    </div> -->
     <transition name="fade">
       <div v-if="product && open" class="fixed z-17 bg-black bg-opacity-60 inset-0">
         <div v-if="route" class="text-center">
@@ -101,7 +103,8 @@ const props = defineProps<{ open: boolean; route?: boolean }>()
 watch(() => props.open, (v) => {
   if (v) document.querySelector('body')?.classList.add('overflow-hidden')
 })
-const product = useRootStore().products?.[0]
+const rootStore = useRootStore()
+const product = rootStore.products?.[0]
 const bookDateName = 'Book Date'
 const Snipcart = ref(null)
 const errors = ref<{ date: string }>({
@@ -134,6 +137,7 @@ const submit = async() => {
   if (new Date(form.date).getTime() < new Date().getTime())
     errors.value.date = 'Pick a date in the future.'
   if (errors.value.date) return
+  rootStore.appLoading = true
   try {
     toggleBookNow(false)
     const dateParsed = parseDate(new Date(form.date))
@@ -183,6 +187,9 @@ const submit = async() => {
   }
   catch (error) {
     console.log(error)
+  }
+  finally {
+    rootStore.appLoading = false
   }
 }
 const schema = {

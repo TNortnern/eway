@@ -45,6 +45,9 @@ export const createApp = ViteSSG(
     //   }))
     // }
     app.use(VueObserveVisibility)
+    // app.config.compilerOptions.isCustomElement = (tag) => {
+    //   return tag === 'billing'
+    // }
 
     // or custom global options
     // registerScrollSpy(app, {
