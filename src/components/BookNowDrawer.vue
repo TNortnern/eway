@@ -36,26 +36,52 @@
         </div>
         <form
           class="w-full px-4 text-sm book-form"
-          :schema="schema"
           @submit.prevent="submit()"
         >
           <AppInput
-            v-model="form.name"
-            label="Name"
+            v-model="form.first_name"
+            label="First Name"
             :class="{
-              'mb-5': v$?.form.name?.$errors?.[0]?.$message
+              'mb-5': v$?.form.first_name?.$errors?.[0]?.$message
             }"
-            placeholder="Your Name"
-            :error-message="(v$?.form.name?.$errors?.[0]?.$message as string)"
+            placeholder="Your First Name"
+            :error-message="(v$?.form.first_name?.$errors?.[0]?.$message as string)"
           />
           <AppInput
-            v-model="form.quantity"
+            v-model="form.last_name"
+            label="Last Name"
+            :class="{
+              'mb-5': v$?.form.last_name?.$errors?.[0]?.$message
+            }"
+            placeholder="Your Last Name"
+            :error-message="(v$?.form.last_name?.$errors?.[0]?.$message as string)"
+          />
+          <AppInput
+            v-model="form.email"
+            label="Email"
+            :class="{
+              'mb-5': v$?.form.email?.$errors?.[0]?.$message
+            }"
+            placeholder="Your Email"
+            :error-message="(v$?.form.email?.$errors?.[0]?.$message as string)"
+          />
+          <AppInput
+            v-model="form.riders"
             label="Amount of riders"
             :class="{
-              'mb-5': v$?.form.quantity?.$errors?.[0]?.$message
+              'mb-5': v$?.form.riders?.$errors?.[0]?.$message
             }"
             placeholder="Rider count"
-            :error-message="(v$?.form.quantity?.$errors?.[0]?.$message as string)"
+            :error-message="(v$?.form.riders?.$errors?.[0]?.$message as string)"
+          />
+          <AppInput
+            v-model="form.hours"
+            label="Amount of hours"
+            :class="{
+              'mb-5': v$?.form.hours?.$errors?.[0]?.$message
+            }"
+            placeholder="Rider count"
+            :error-message="(v$?.form.hours?.$errors?.[0]?.$message as string)"
           />
           <div class="mb-5">
             <label
@@ -96,11 +122,11 @@
 <script setup lang="ts">
 import useVuelidate from '@vuelidate/core'
 import { required, numeric, between } from '@vuelidate/validators'
-import { useNewElement } from '~/composables/useNewElement'
+
 import { useRootStore } from '~/stores/root'
-import { useSnipCart } from '~/composables/useSnipCart'
 import { defaultDateTimeValue } from '~/helpers'
 import { toggleBookNow } from '~/components/Navbar/state'
+import api from '~/api'
 const drawer = ref<any>(null)
 onClickOutside(drawer, () => toggleBookNow(false))
 const props = defineProps<{ open: boolean; route?: boolean }>()
@@ -109,31 +135,30 @@ watch(() => props.open, (v) => {
   else document.querySelector('body')?.classList.remove('overflow-hidden')
 })
 const rootStore = useRootStore()
-const product = rootStore.products?.[0]
-const bookDateName = 'Book Date'
-const Snipcart = ref(null)
+const product: any = []
 const errors = ref<{ date: string }>({
   date: '',
 })
 const form = reactive({
-  name: '',
-  quantity: 1,
+  first_name: '',
+  last_name: '',
+  email: '',
+  riders: 1,
+  hours: 1,
   date: defaultDateTimeValue(),
 })
 const rules = {
   form: {
-    name: { required },
-    quantity: { required, numeric, between: between(1, 9) },
+    first_name: { required },
+    last_name: { required },
+    email: { required },
+    riders: { required, numeric, between: between(1, 9) },
+    hours: { required, numeric, between: between(1, 4) },
   },
 }
 const v$ = useVuelidate(rules, { form })
-const parseDate = (date: Date = new Date()) => {
-  const offset = date.getTimezoneOffset()
-  date = new Date(date.getTime() - (offset * 60 * 1000))
-  return date.toISOString().split('T')[0]
-}
+
 const submit = async() => {
-  if (!Snipcart.value) return
   errors.value.date = ''
   const isFormCorrect = await v$.value.$validate()
   // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
@@ -144,138 +169,16 @@ const submit = async() => {
   if (errors.value.date) return
   rootStore.appLoading = true
   try {
-    toggleBookNow(false)
-    const dateParsed = parseDate(new Date(form.date))
-    const cartItems = Snipcart.value.store?.getState()?.cart?.items?.items
-    const cartItemExist = cartItems.find((item) => {
-      const fieldsToCheck: ['name', 'price', 'Book Date'] = ['name', 'price', bookDateName]
-      let exists = true
-      for (let i = 0; i < fieldsToCheck.length; i++) {
-        const cartValue = fieldsToCheck[i] === bookDateName ? item?.customFields[0]?.displayValue : item[fieldsToCheck[i]].toString()
-        const formValue = fieldsToCheck[i] === bookDateName ? parseDate(new Date(form.date)).toString() : product[fieldsToCheck[i]].toString()
-        if (cartValue?.toLowerCase() !== formValue?.toLowerCase()) {
-          exists = false
-          break
-        }
-      }
-      return exists
-    })
-    if (cartItemExist) {
-      await Snipcart.value.api.cart.items.update({
-        uniqueId: cartItemExist.uniqueId,
-        quantity: form.quantity + cartItemExist.quantity <= 9 ? form.quantity + cartItemExist.quantity : 9,
-      })
-      Snipcart.value.api.theme.cart.open()
-    }
-    else {
-      await Snipcart.value?.api.cart.items.add({
-        id: product.id,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        minQuantity: 1,
-        maxQuantity: 9,
-        customFields: [
-          {
-            id: 'Reseravation Date',
-            name: bookDateName,
-            type: 'dropdown',
-            options: dateParsed,
-            value: dateParsed,
-          },
-        ],
-        url: 'https://moonlit-pixie-20706b.netlify.app/book-now',
-        quantity: form.quantity,
-      },
-      )
-    }
+    const { data } = await api.post('/api/initialize-payment', form)
+    window.location.href = data.url
   }
   catch (error) {
-    console.log(error)
+    console.log('error', error)
   }
   finally {
     rootStore.appLoading = false
   }
 }
-const schema = {
-  first_name: {
-    rules: {
-      isRequired: true,
-    },
-  },
-  // last_name: {
-  //   rules: {
-  //     isRequired: true,
-  //   },
-  // },
-  // email: {
-  //   rules: {
-  //     isRequired: true,
-  //     email: {
-  //       message: '^Please enter a valid email.',
-  //     },
-  //   },
-  // },
-  bookDate: {
-    rules: {
-      isRequired: true,
-    },
-  },
-}
-useNewElement([
-  {
-    el: 'link',
-    attributes: {
-      rel: 'preconnect',
-      href: 'https://app.snipcart.com',
-    },
-    appendTo: 'head',
-  },
-  {
-    el: 'link',
-    attributes: {
-      rel: 'preconnect',
-      href: 'https://cdn.snipcart.com',
-    },
-    appendTo: 'head',
-  },
-  {
-    el: 'link',
-    attributes: {
-      rel: 'stylesheet',
-      href: 'https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.css',
-    },
-    appendTo: 'head',
-  },
-  {
-    el: 'script',
-    attributes: {
-      async: true,
-      id: 'snipcart-script',
-      src: 'https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js',
-    },
-    appendTo: 'body',
-  },
-  // {
-  //   el: 'div',
-  //   attributes: {
-  //     'hidden': true,
-  //     'id': 'snipcart',
-  //     'data-api-key': 'OWIyZWFlODItMWIwNi00OTc0LWI0MjMtZjQzYjg4YTA4M2RlNjM3ODQ0OTk1NDQ2NzY2NjYw',
-  //   },
-  //   appendTo: 'body',
-  // },
-],
-)
-
-useSnipCart('#snipcart-script', (snipcart) => {
-  Snipcart.value = snipcart
-})
-watch(Snipcart, (instance) => {
-  instance.events.on('item.adding', (parsedCartItem) => {
-    // console.log(parsedCartItem)
-  })
-})
 
 </script>
 

@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppButton: typeof import('./components/AppButton.vue')['default']
     AppInput: typeof import('./components/AppInput.vue')['default']
     BookNowDrawer: typeof import('./components/BookNowDrawer.vue')['default']
     Button: typeof import('./components/Button.vue')['default']
@@ -12,7 +13,6 @@ declare module 'vue' {
     ContactBottomLeftIcon: typeof import('./components/ContactBottomLeftIcon.vue')['default']
     ContactBottomRightIcon: typeof import('./components/ContactBottomRightIcon.vue')['default']
     ContactInput: typeof import('./components/ContactInput.vue')['default']
-    'ContactInput copy': typeof import('./components/ContactInput copy.vue')['default']
     DesktopNavbar: typeof import('./components/Navbar/DesktopNavbar.vue')['default']
     ErrorMessage: typeof import('./components/ErrorMessage.vue')['default']
     FeatureItem: typeof import('./components/FeatureItem.vue')['default']
@@ -24,9 +24,12 @@ declare module 'vue' {
     Navbar: typeof import('./components/Navbar/Navbar.vue')['default']
     Navbar2: typeof import('./components/Navbar2.vue')['default']
     NavbarLogo: typeof import('./components/NavbarLogo.vue')['default']
+    Order: typeof import('./components/Order.vue')['default']
     PageSpinner: typeof import('./components/PageSpinner.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionHeader: typeof import('./components/SectionHeader.vue')['default']
+    Stripe: typeof import('./components/Stripe.vue')['default']
+    SuccessfulOrder: typeof import('./components/SuccessfulOrder.vue')['default']
     TestimonialItem: typeof import('./components/TestimonialItem.vue')['default']
     Testimonials: typeof import('./components/Testimonials.vue')['default']
     TwoFeatures: typeof import('./components/TwoFeatures.vue')['default']

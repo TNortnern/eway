@@ -1057,10 +1057,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@headlessui/vue@^1.4.1":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.4.2.tgz#1098f52cb6c583772708a980b3487222ac0ae65e"
-  integrity sha512-+uOaPwHncxHZ6JBwYycu3YxDDrY0v1tcxCtK04H1WGBLBm07dqVi38Q2RB7eY867FUhD0sL6q+Fj69rVn8P0OQ==
+"@headlessui/vue@^1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.6.4.tgz#8492bbb044a9b19ee92bef9cd4d0c3d8feed8588"
+  integrity sha512-axZMcfRLNuwHESPMgDb0Vj7xxlNPmsPl77pvoRZGzJh7lRdRic9kC/qbVM8G36OpIJRZzqrlADLQ2JIObhQjBg==
 
 "@heroicons/vue@^1.0.5":
   version "1.0.5"
@@ -1268,6 +1268,11 @@
   dependencies:
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
+
+"@stripe/stripe-js@^1.31.0":
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.31.0.tgz#2920bdddc3eabb5734f9ca794824e25b378533ac"
+  integrity sha512-drlXsNvd/s9S1+Ghja0aDB81N3Wr/6iRAZ7MOzKv7AtKxVdvGpOwESw3z1lHl/Wx/rvPpA7whKdB3W2CnVSArw==
 
 "@surma/rollup-plugin-off-main-thread@^1.4.1":
   version "1.4.2"
@@ -6654,6 +6659,11 @@ vue-router@^4.0.12:
   integrity sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.18"
+
+vue-stripe-js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-stripe-js/-/vue-stripe-js-1.0.1.tgz#7eba90a279d4ef466a5beb16d8ffe0633b62e52a"
+  integrity sha512-f2u+YkN42uHrUZbYiiqEQ+DtCyPQgJ/BdzU35EwhFqJghS6k2n8tw/VhYm35TjLsxJE+tYO7/pBUdTS+Xu5Rrw==
 
 vue-tsc@^0.28.10:
   version "0.28.10"

@@ -7,7 +7,7 @@
     </transition>
     <BookNowDrawer :open="bookNowDrawerOpen" />
     <router-view />
-    <Footer v-if="!['/book-now'].includes($route.path)" />
+    <Footer v-if="!['/book-now', '/complete-order'].includes($route.path)" />
   </main>
 </template>
 
