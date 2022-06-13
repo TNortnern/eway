@@ -121,7 +121,7 @@
 
 <script setup lang="ts">
 import useVuelidate from '@vuelidate/core'
-import { required, numeric, between } from '@vuelidate/validators'
+import { required, numeric, between, email } from '@vuelidate/validators'
 
 import { useRootStore } from '~/stores/root'
 import { defaultDateTimeValue } from '~/helpers'
@@ -151,7 +151,7 @@ const rules = {
   form: {
     first_name: { required },
     last_name: { required },
-    email: { required },
+    email: { required, email },
     riders: { required, numeric, between: between(1, 9) },
     hours: { required, numeric, between: between(1, 4) },
   },
