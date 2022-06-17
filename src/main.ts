@@ -7,6 +7,7 @@ import VueObserveVisibility from 'vue3-observe-visibility2'
 import vGenericFrom from 'v-generic-form'
 // import AOS from 'aos'
 // import 'aos/dist/aos.css'
+import VueGtag from 'vue-gtag'
 import App from './App.vue'
 
 // windicss layers
@@ -34,11 +35,17 @@ export const createApp = ViteSSG(
         },
       },
     }
-    const { app, isClient } = ctx
+    const { app, isClient, router } = ctx
     // console.log('ctx', ctx)
     app.use(VueSmoothScroll)
     app.mixin(globalMixin)
     app.use(vGenericFrom)
+    app.use(VueGtag, {
+      config: { id: 'G-WHR4B77CHN' },
+      appName: 'https://trayvonnorthern.com',
+      pageTrackerScreenviewEnabled: true,
+      router,
+    })
     // if (isClient) {
     //   app.use(AOS.init({
     //     once: true,
