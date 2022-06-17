@@ -42,7 +42,7 @@ export const createApp = ViteSSG(
     app.use(vGenericFrom)
     app.use(VueGtag, {
       config: { id: 'G-WHR4B77CHN' },
-      appName: 'https://trayvonnorthern.com',
+      appName: 'ewayapp',
       pageTrackerScreenviewEnabled: true,
       router,
     })
