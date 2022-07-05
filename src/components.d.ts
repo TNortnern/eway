@@ -28,6 +28,8 @@ declare module 'vue' {
     PageSpinner: typeof import('./components/PageSpinner.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionHeader: typeof import('./components/SectionHeader.vue')['default']
+    SignatureItem: typeof import('./components/SignatureItem.vue')['default']
+    SignWaiver: typeof import('./components/SignWaiver.vue')['default']
     Stripe: typeof import('./components/Stripe.vue')['default']
     SuccessfulOrder: typeof import('./components/SuccessfulOrder.vue')['default']
     TestimonialItem: typeof import('./components/TestimonialItem.vue')['default']

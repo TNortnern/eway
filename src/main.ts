@@ -8,6 +8,7 @@ import vGenericFrom from 'v-generic-form'
 // import AOS from 'aos'
 // import 'aos/dist/aos.css'
 import VueGtag from 'vue-gtag'
+import VueSignaturePad from 'vue-signature-pad'
 import App from './App.vue'
 
 // windicss layers
@@ -52,6 +53,7 @@ export const createApp = ViteSSG(
     //   }))
     // }
     app.use(VueObserveVisibility)
+    app.use(VueSignaturePad)
     // app.config.compilerOptions.isCustomElement = (tag) => {
     //   return tag === 'billing'
     // }
