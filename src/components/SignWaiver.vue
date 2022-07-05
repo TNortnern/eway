@@ -4,6 +4,7 @@
       <div class="mt-2">
         <a v-smooth-scroll href="#signature">
           <AppButton
+            v-if="!screenshotting"
             class="mb-4"
           >
             Scroll to signature
@@ -82,7 +83,7 @@
         </div>
         <div class="text-sm text-gray-500">
         </div>
-        <div class="mt-4">
+        <div v-if="!screenshotting" class="mt-4">
           <AppButton
             :class="{
               'disabled opacity-40 pointer-events-none': !validForm
@@ -104,6 +105,7 @@ const signature = ref('')
 const signaturePad = ref()
 const filledDate = ref(false)
 const validForm = computed(() => printedName.value && signature.value && filledDate.value)
+const screenshotting = ref(false)
 const today = computed(() => {
   const date = new Date()
   const year = date.getFullYear()
@@ -140,3 +142,13 @@ const submit = async() => {
   await console.log('submit')
 }
 </script>
+
+<style lang="scss">
+
+.prefilled {
+  @apply inline-block pr-2 border-b border-black font-bold;
+}
+.prefilled-centered {
+  @apply min-w-56 inline-flex justify-center border-b border-black font-bold;
+}
+</style>
