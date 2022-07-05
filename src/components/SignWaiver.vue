@@ -1,5 +1,5 @@
 <template>
-  <div class="inset-0 overflow-y-auto w-[75%] mx-auto border p-4">
+  <div class="inset-0 overflow-y-auto w-[90%] md:w-[75%] mx-auto border p-4">
     <div class="flex min-h-full items-center justify-center p-4">
       <div class="mt-2">
         <a v-smooth-scroll href="#signature">
@@ -46,7 +46,7 @@
           >
             SIGNATURES
           </h2>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-items-stretch mb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-items-stretch mb-30 lg:mb-16">
             <SignatureItem
               text="EWAY LLC"
               :cursive="true"
