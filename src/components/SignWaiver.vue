@@ -46,7 +46,7 @@
           >
             SIGNATURES
           </h2>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-items-stretch mb-30 lg:mb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-items-stretch mb-20">
             <SignatureItem
               text="EWAY LLC"
               :cursive="true"

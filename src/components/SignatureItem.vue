@@ -1,8 +1,8 @@
 <template>
-  <div class="h-8">
+  <div>
     <div
       :style="`${cursive ? 'font-family: cursive' : ''}`"
-      class="w-full lg:w-92 relative border-b border-black font-bold"
+      class="w-full lg:w-92 relative border-b border-black font-bold h-8"
     >
       <template v-if="!signature && !typing">
         {{ textDisplay }}
@@ -19,7 +19,7 @@
       <template v-if="fillDate">
         <button
           v-if="textDisplay === text"
-          class="hover:(ring-2) duration-200"
+          class="hover:(ring-2) duration-200 font-bold"
           @click="textDisplay = today, onDateClicked()"
         >
           Click to fill date
@@ -34,7 +34,7 @@
         >
       </template>
     </div>
-    <div class="flex gap-24">
+    <div class="flex gap-3 text-sm">
       <span>{{ label }}</span>
       <button v-if="signature && modelValue" class="font-bold underline" @click="clearSignature()">
         Clear Signature
