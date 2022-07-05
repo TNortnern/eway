@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="h-8">
     <div
       :style="`${cursive ? 'font-family: cursive' : ''}`"
-      class="w-full lg:w-92 relative border-b border-black font-bold h-6"
+      class="w-full lg:w-92 relative border-b border-black font-bold"
     >
       <template v-if="!signature && !typing">
         {{ textDisplay }}
@@ -34,12 +34,12 @@
         >
       </template>
     </div>
-    <p>
-      {{ label }}
-      <AppButton v-if="signature && modelValue" @click="clearSignature()">
-        Clear
-      </AppButton>
-    </p>
+    <div class="flex gap-24">
+      <span>{{ label }}</span>
+      <button v-if="signature && modelValue" class="font-bold underline" @click="clearSignature()">
+        Clear Signature
+      </button>
+    </div>
   </div>
 </template>
 

@@ -49,12 +49,12 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-items-stretch mb-16">
             <SignatureItem
               text="EWAY LLC"
-              cursive
+              :cursive="true"
               label="Signature of Releasee"
             />
             <SignatureItem
               :text="today"
-              cursive
+              :cursive="true"
               label="Date"
             />
             <SignatureItem
@@ -66,17 +66,17 @@
             <SignatureItem
               v-model="signature"
               label="Signature of Releasor"
-              signature
+              :signature="true"
             />
             <SignatureItem
               label="Date"
-              fill-date
+              :fill-date="true"
               @filled-date="() => filledDate = true"
             />
             <SignatureItem
               v-model="printedName"
               label="Printed Name of Releasor"
-              typing
+              :typing="true"
             />
           </div>
         </div>

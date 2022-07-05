@@ -5,6 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-const signature = ref('')
-const printedName = ref('')
+
 </script>
