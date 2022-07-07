@@ -218,6 +218,14 @@ const submit = async() => {
         <img src=${file.url}>
         `,
       })
+      Swal.fire({
+        title: 'Waiver sent. You are now elgible to ride.',
+        toast: true,
+        icon: 'success',
+        timer: 3500,
+        position: 'top',
+        showConfirmButton: false,
+      })
     })
     .catch((error) => {
       console.error('oops, something went wrong!', error)

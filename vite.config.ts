@@ -44,6 +44,11 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        {
+          sweetalert2: [
+            ['default', 'Swal'],
+          ],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
     }),
