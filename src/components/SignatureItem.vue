@@ -11,9 +11,12 @@
         <VueSignaturePad
           ref="signaturePad"
           width="100%"
-          height="50px"
+          height="75px"
           :options="{ onEnd }"
-          class="border absolute bottom-0"
+          class="absolute bottom-0"
+          :class="{
+            'border': showAttributes
+          }"
         />
       </template>
       <template v-if="fillDate">
@@ -27,7 +30,7 @@
       </template>
       <template v-if="typing">
         <input
-          class="clear-input hover:ring-2 focus:(ring-4) w-full block duration-200 absolute bottom-0"
+          class="clear-input hover:ring-2 focus:(ring-4) w-full block duration-200 absolute bottom-0 pl-1 font-bold"
           type="text"
           :value="modelValue"
           @input="emit('update:modelValue', $event.target.value)"
@@ -36,7 +39,7 @@
     </div>
     <div class="flex gap-3 text-sm">
       <span>{{ label }}</span>
-      <button v-if="signature && modelValue" class="font-bold underline" @click="clearSignature()">
+      <button v-if="signature && modelValue && showAttributes" class="font-bold underline" @click="clearSignature()">
         Clear Signature
       </button>
     </div>
@@ -44,7 +47,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   cursive?: boolean
   label: string
   text?: string
@@ -52,7 +55,10 @@ const props = defineProps<{
   fillDate?: boolean
   typing?: boolean
   modelValue?: string
-}>()
+  showAttributes?: boolean
+}>(), {
+  showAttributes: true,
+})
 const signaturePad = ref()
 
 const emit = defineEmits(['update:modelValue', 'filledDate'])
