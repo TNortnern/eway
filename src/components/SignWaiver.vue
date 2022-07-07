@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-if="loading" class="bg-black z-19 bg-opacity-99 fixed inset-0 h-screen w-full flex justify-center items-center">
+  <div :class="{'overflow-hidden': loading}">
+    <div v-if="loading" class="bg-black z-19 fixed inset-0 h-screen w-full flex justify-center items-center">
       <div class="text-center">
         <PageSpinner />
         <p class="text-white animate-pulse animate-infinite animate-faster">
@@ -9,10 +9,6 @@
       </div>
     </div>
 
-    <img
-      :src="src"
-      alt=""
-    >
     <div
       id="my-node"
       :class="screenshotting ? 'w-full' : 'border mx-auto w-[90%] md:w-[75%]'"
@@ -148,16 +144,6 @@ const today = computed(() => {
 
   return `${month}/${day}/${year}`
 })
-const scrollToSignature = async() => {
-  if (!signaturePad.value) return
-  jump('#signature', {
-    duration: 1000,
-    offset: 50,
-    callback: undefined,
-    // easing: 'easeInOutQuad',
-    a11y: false,
-  })
-}
 
 const terms = [
   'I and anyone claiming on my behalf release and forever discharge Releasee and its affiliates, successors and assigns, officers, employees, representatives, partners, agents and anyone claiming through them (collectively, the "Released Parties"), in their individual and/or corporate capacities from causes of action of any nature and kind, known or unknown, which I may have agains Releasee or any Released Parties arising out of or relating to any injury, loss or damage to person and property that may be sustained as a result of participation in the Activity ("Claims").',
