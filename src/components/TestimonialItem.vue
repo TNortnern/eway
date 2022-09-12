@@ -23,7 +23,7 @@
         </h4>
       </div>
     </div>
-    <blockquote class="text-xl text-gray-500 lg:h-45 xl:h-28 h-auto lg:mt-4">
+    <blockquote class="text-xl text-gray-500 lg:h-56 xl:h-34 h-auto lg:mt-4">
       {{ testimonial || 'Amet atque nihil eius ea.' }}
     </blockquote>
     <div class="flex justify-center items-center w-full md:w-auto gap-x-1 mt-4">

@@ -74,7 +74,7 @@
             placeholder="Rider count"
             :error-message="(v$?.form.riders?.$errors?.[0]?.$message as string)"
           />
-          <AppInput
+          <!-- <AppInput
             v-model="form.hours"
             label="Amount of hours"
             :class="{
@@ -82,7 +82,7 @@
             }"
             placeholder="Rider count"
             :error-message="(v$?.form.hours?.$errors?.[0]?.$message as string)"
-          />
+          /> -->
           <div class="mb-5">
             <label
               for="date"
@@ -144,7 +144,7 @@ const form = reactive({
   last_name: '',
   email: '',
   riders: 1,
-  hours: 1,
+  // hours: 1,
   date: defaultDateTimeValue(),
 })
 const rules = {
@@ -153,7 +153,7 @@ const rules = {
     last_name: { required },
     email: { required, email },
     riders: { required, numeric, between: between(1, 9) },
-    hours: { required, numeric, between: between(1, 4) },
+    // hours: { required, numeric, between: between(1, 4) },
   },
 }
 const v$ = useVuelidate(rules, { form })
@@ -164,7 +164,7 @@ const submit = async() => {
   // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
   if (!isFormCorrect) return
   if (!form.date) errors.value.date = 'Value is required.'
-  if (new Date(form.date).getTime() < new Date().getTime())
+  if (new Date(form.date).getTime() <= new Date().getTime())
     errors.value.date = 'Pick a date in the future.'
   if (errors.value.date) return
   rootStore.appLoading = true

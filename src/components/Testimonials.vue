@@ -43,9 +43,9 @@
               href="https://www.facebook.com/BraxDad32/posts/4344924098878514"
             />
             <TestimonialItem
-              testimonial="awesome young people who are getting this business off the ground..stop and see them..you won't be disappointed"
-              name="Pickles Salsa N More"
-              href="https://www.facebook.com/permalink.php?story_fbid=120125800374342&id=100071307661667"
+              testimonial="Awesome young guys assisted me with learning to ride them and a couple buddies and I went for a ride. It was a very fun experience and I’m glad these are coming to Springfield!"
+              name="Linda Percy"
+              href="https://www.google.com/search?q=eway+scooters&sxsrf=ALiCzsZ439rk9CsnFBaj843qvOKc7gMWhA%3A1662942564232&source=hp&ei=ZH0eY6mcC5GyqtsP16GmgA8&iflsig=AJiK0e8AAAAAYx6LdHDhOVufWsIZMKHQek8iXHLtmsga&gs_ssp=eJzj4tVP1zc0LDA0KbKILywwYLRSNaiwME9OMzM2SzSxSDE3NTK1tDKoMElKNTdPNjdJSjQ0SEo1TvHiTS1PrFQoTs7PL0ktKgYAnPAUhA&oq=eway&gs_lcp=Cgdnd3Mtd2l6EAMYADILCC4QgAQQxwEQrwEyCwguEIAEEMcBENEDMhAILhCxAxCDARDHARDRAxAKMgUIABCABDIECC4QCjIKCC4QxwEQrwEQCjIFCAAQgAQyBQgAEIAEMgoILhDHARCvARAKMgcIABCxAxAKOgQIIxAnOgUIABCRAjoRCC4QgAQQsQMQgwEQxwEQ0QM6CwguELEDEIMBENQCOgsIABCABBCxAxCDAToICAAQsQMQgwE6CAguELEDEIMBOggILhCABBCxAzoECAAQAzoICAAQgAQQsQM6DgguEIAEELEDEMcBEK8BOg4ILhCABBCxAxDHARDRAzoLCC4QgAQQsQMQgwFQAFiIBmDlF2gBcAB4AIABfIgBpgSSAQMwLjWYAQCgAQE&sclient=gws-wiz#lrd=0x87cf636a48d75259:0x4be77c74ba10be3d,1,,,"
               border-left
               border-right
             />
