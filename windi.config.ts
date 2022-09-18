@@ -15,7 +15,11 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        headingColor: 'rgb(55, 65, 81)',
+        'headingColor': 'rgb(55, 65, 81)',
+        'app-yellow-1': '#F8E855',
+      },
+      fontFamily: {
+        quicksand: ['Quicksand', 'sans-serif'],
       },
       typography: {
         DEFAULT: {

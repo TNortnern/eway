@@ -32,7 +32,7 @@
                 class="inline-flex items-center justify-center px-8 py-2.5 border border-transparent rounded-sm shadow-sm text-base font-medium text-white bg-yellow-400 hover:(bg-yellow-500 text-white)"
                 @click="toggleBookNow(true)"
               >
-                Start riding now!
+                Ride an entire day for only $30 now!
               </button>
               <!-- <p class="text-base font-medium text-gray-50">
                 Subscribe to our newsletter

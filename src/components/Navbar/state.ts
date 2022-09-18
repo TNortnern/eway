@@ -36,10 +36,10 @@ watch(bookNowDrawerOpen, (val) => {
 })
 
 export const navLinks: navLink[] = [
-  // {
-  //   name: 'Who we are',
-  //   href: '#who-we-are',
-  // },
+  {
+    name: 'Who we are',
+    href: '#who-we-are',
+  },
   {
     name: 'Why choose micromobility?',
     href: '#why-choose-micromobility',
@@ -52,10 +52,10 @@ export const navLinks: navLink[] = [
     name: 'Testimonials',
     href: '#testimonials',
   },
-  // {
-  //   name: 'Contact',
-  //   href: '#contact',
-  // },
+  {
+    name: 'Contact',
+    href: '#contact',
+  },
   {
     name: 'Book Now',
     action: toggleBookNow,

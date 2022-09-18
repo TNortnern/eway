@@ -16,3 +16,10 @@ import { bookNowDrawerOpen } from '~/components/Navbar/state'
 import { useRootStore } from '~/stores/root'
 const rootStore = useRootStore()
 </script>
+
+<style>
+
+  html {
+    font-family: Quicksand, sans-serif;
+  }
+</style>

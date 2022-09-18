@@ -1,7 +1,8 @@
 <template>
   <div class="overflow-x-hidden">
-    <Hero />
+    <!-- <Hero /> -->
     <!-- <WhoWeAre /> -->
+    <Hero2 />
     <MainIntro />
     <TwoFeatures />
     <Testimonials />

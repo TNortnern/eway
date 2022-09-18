@@ -14,6 +14,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import { VitePluginFonts } from 'vite-plugin-fonts'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -26,6 +27,11 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
+    }),
+    VitePluginFonts({
+      google: {
+        families: ['Quicksand'],
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
