@@ -48,7 +48,7 @@
     </nav>
     <div class="max-w-8xl h-full pt-20 text-center lg:(absolute top-0 left-0 bottom-0 right-0 mx-auto pt-0 text-left)">
       <img
-        class="hidden absolute flex items-center z-10 w-[65%] lg:(flex -right-32 -right-23) xl:(-right-28) 2xl:(-right-42) at"
+        class="hidden absolute flex items-center z-10 w-[65%] lg:(flex -right-32 -right-23 top-[52%]) xl:(-right-28 top-[55%]) 2xl:(-right-42) at"
         src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbc09f0cbec8621f83fc1d_BOLT-Devices-2021-2.png"
         alt="scooter"
       >
@@ -76,7 +76,7 @@
           </div>
         </div>
         <img
-          class="w-full lg:hidden relative z-10 mt-5 md:mt-12"
+          class="w-full hidden relative z-10 mt-5 md:mt-12"
           src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbc09f0cbec8621f83fc1d_BOLT-Devices-2021-2.png"
           alt="scooter"
         >
@@ -115,7 +115,6 @@ const active = useActiveLink()
 
 .at {
   position: absolute;
-  top: 50%;
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
