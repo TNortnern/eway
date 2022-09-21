@@ -31,7 +31,10 @@
             </li>
           </ul>
         </div>
-        <div class="ml-auto flex gap-5 items-center">
+        <div
+          id="heading"
+          class="ml-auto flex gap-5 items-center"
+        >
           <a
             href="tel:+14175090120"
             class="text-yellow-400 self-center hover:underline font-bold duration-300 text-lg"
@@ -48,7 +51,6 @@
     </nav>
     <div class="max-w-8xl h-full pt-20 text-center lg:(absolute top-0 left-0 bottom-0 right-0 mx-auto pt-0 text-left)">
       <img
-        id="heading"
         class="hidden absolute flex items-center z-10 w-[65%] lg:(flex -right-32 -right-23 top-[52%]) xl:(-right-28 top-[55%]) 2xl:(-right-42) at scroll"
         src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbc09f0cbec8621f83fc1d_BOLT-Devices-2021-2.png"
         alt="scooter"
