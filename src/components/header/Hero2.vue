@@ -48,15 +48,18 @@
     </nav>
     <div class="max-w-8xl h-full pt-20 text-center lg:(absolute top-0 left-0 bottom-0 right-0 mx-auto pt-0 text-left)">
       <img
-        class="hidden absolute flex items-center z-10 w-[65%] lg:(flex -right-32 -right-23 top-[52%]) xl:(-right-28 top-[55%]) 2xl:(-right-42) at"
+        id="heading"
+        class="hidden absolute flex items-center z-10 w-[65%] lg:(flex -right-32 -right-23 top-[52%]) xl:(-right-28 top-[55%]) 2xl:(-right-42) at scroll"
         src="https://assets-global.website-files.com/5ea823e1cf6ee17f763dcc39/60dbc09f0cbec8621f83fc1d_BOLT-Devices-2021-2.png"
         alt="scooter"
       >
       <div class="flex flex-wrap lg:(justify-between items-center h-full) text-6xl leading-72px w-full px-6 lg:px-8">
         <div class="w-full lg:w-[44%]">
           <div class="text-white font-bold text-3xl md:text-4xl lg:text-6xl xl:text-7xl whitespace-nowrap">
-            <p>Book Your New</p>
-            <p class="text-yellow-400">
+            <p class="left">
+              Book Your New
+            </p>
+            <p class="text-yellow-400 right">
               Eco-Friendly <span class="text-white">Ride.</span>
             </p>
           </div>
@@ -96,11 +99,61 @@
 </template>
 
 <script lang="ts" setup>
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import { navLinks } from '../Navbar/state'
-import { open } from './state'
+// import { open } from './state'
 // import { links } from '~/store/routes'
 import useActiveLink from '~/composables/useActiveLink'
+gsap.registerPlugin(ScrollTrigger)
 const active = useActiveLink()
+onMounted(() => {
+  gsap.fromTo(
+    '#heading',
+    {
+      opacity: 0,
+      x: '-100%',
+    },
+    {
+      duration: 1.5,
+      opacity: 1,
+      x: 0,
+    },
+  )
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.slide-in',
+      },
+    }).from('.slide-in p', {
+      opacity: 0,
+      x: '-100%',
+      duration: 8,
+    }).to('.slide-in p', { x: 0, opacity: 1, duration: 8 })
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.slide-in',
+      },
+    }).from('.slide-in .left', {
+      opacity: 0,
+      x: '-100%',
+    }).to('.slide-in .left', { x: 0, opacity: 1, duration: 8 })
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.slide-in',
+      },
+    })
+
+    .from('.slide-in .right', {
+      opacity: 0,
+      x: '-100%',
+    })
+    .to('.slide-in .right', { x: 0, duration: 8 })
+})
 </script>
 
 <style>
