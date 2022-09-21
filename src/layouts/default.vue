@@ -14,7 +14,11 @@
 <script lang="ts" setup>
 import { bookNowDrawerOpen } from '~/components/Navbar/state'
 import { useRootStore } from '~/stores/root'
+
 const rootStore = useRootStore()
+onMounted(() => {
+
+})
 </script>
 
 <style>
