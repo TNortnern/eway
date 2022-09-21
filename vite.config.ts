@@ -22,6 +22,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      // 'pixi.js': path.resolve(__dirname, './node_modules/pixi.js/dist/browser/pixi.mjs'),
+      'ScrollTrigger': path.resolve(__dirname, './node_modules/gsap/ScrollTrigger'),
+
     },
   },
   plugins: [

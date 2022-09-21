@@ -100,14 +100,14 @@
 
 <script lang="ts" setup>
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import ScrollTrigger from 'ScrollTrigger'
 import { navLinks } from '../Navbar/state'
 // import { open } from './state'
 // import { links } from '~/store/routes'
 import useActiveLink from '~/composables/useActiveLink'
-gsap.registerPlugin(ScrollTrigger)
 const active = useActiveLink()
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger)
   gsap.fromTo(
     '#heading',
     {
