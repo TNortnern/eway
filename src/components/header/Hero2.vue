@@ -109,7 +109,7 @@ import { navLinks } from '../Navbar/state'
 import useActiveLink from '~/composables/useActiveLink'
 const active = useActiveLink()
 gsap.registerPlugin(ScrollTrigger)
-onMounted(() => {
+onBeforeMount(() => {
   gsap.fromTo(
     '#heading',
     {
