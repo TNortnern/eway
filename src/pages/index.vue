@@ -16,6 +16,9 @@
             Book Now
           </AppButton>
         </div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl mt-8">
+          Or email us at <a href="mailto:ewaywebsite@outlook.com" class="hover:underline block">ewaywebsite@outlook.com</a>
+        </h2>
       </div>
     </div>
     <Order />
